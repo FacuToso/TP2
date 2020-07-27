@@ -17,6 +17,7 @@ namespace UI.Desktop
         public Especialidades()
         {
             InitializeComponent();
+            //Hola
         }
 
         public void Listar()
