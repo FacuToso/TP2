@@ -31,6 +31,8 @@ namespace Business.Logic
             return PlanData.GetOne(ID);
         }
 
+        
+
         public void Delete(int ID)
         {
             PlanData.Delete(ID);

@@ -19,6 +19,13 @@ namespace UI.Desktop
         public PlanDesktop()
         {
             InitializeComponent();
+            EspecialidadLogic especialidad = new EspecialidadLogic();
+            List<Especialidad> esp = especialidad.GetAll();
+            foreach (var es in esp)
+            {
+              this.comboBox1.Items.Add(es.Descripcion);
+            }
+
         }
         public PlanDesktop(ModoForm modo) : this()
         {
@@ -26,6 +33,7 @@ namespace UI.Desktop
             // INTERNAMENTE DEBE SETEAR A MODOFORM EN EL MODO ENVIADO COMO PARAMETRO
             // ESTO SERVIRA PARA LAS ALTAS
             this.ModoFormulario = modo;
+            
         }
         public PlanDesktop(int ID, ModoForm modo) : this()
         {
@@ -51,15 +59,18 @@ namespace UI.Desktop
 
         public virtual void MapearDeDatos()
         {
+            EspecialidadLogic especialidad = new EspecialidadLogic();
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion.ToString();
-            this.txtIdEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
-
+            
+            this.comboBox1.Text = especialidad.GetOne(this.PlanActual.IDEspecialidad).Descripcion;
+            //this.txtIdEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+             
         }
 
         public virtual void MapearADatos()
         {
-
+            EspecialidadLogic especialidad = new EspecialidadLogic();
             switch (this.ModoFormulario)
             {
                 case ModoForm.Alta:
@@ -69,7 +80,8 @@ namespace UI.Desktop
 
                     this.PlanActual.Descripcion = this.txtDescripcion.Text;
                     //DEBERIA MOSTRAR EL NOMBRE DE LA ESPECIALIDAD EN VEZ DE EL ID
-                    this.PlanActual.IDEspecialidad = Int32.Parse(this.txtIdEspecialidad.Text);
+                    this.PlanActual.IDEspecialidad = especialidad.GetOneByDesc(this.comboBox1.Text); //Int32.Parse(this.txtIdEspecialidad.Text);
+                    
 
                     // tiene que estar en new
 
@@ -80,8 +92,11 @@ namespace UI.Desktop
                     this.btnAceptar.Text = "Guardar";
 
                     this.PlanActual.Descripcion = this.txtDescripcion.Text;
+                    // this.PlanActual.IDEspecialidad = especialidad.GetOneByDesc(this.comboBox1.Text);
                     //DEBERIA MOSTRAR EL NOMBRE DE LA ESPECIALIDAD EN VEZ DE EL ID
-                    this.PlanActual.IDEspecialidad = Int32.Parse(this.txtIdEspecialidad.Text);
+                    // this.PlanActual.IDEspecialidad = Int32.Parse(this.txtIdEspecialidad.Text);
+                    this.PlanActual.IDEspecialidad = especialidad.GetOneByDesc(this.comboBox1.Text); //Int32.Parse(this.txtIdEspecialidad.Text);
+
                     this.PlanActual.State = BusinessEntity.States.Modified;
 
                     break;
@@ -159,6 +174,12 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PlanDesktop_Load(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
