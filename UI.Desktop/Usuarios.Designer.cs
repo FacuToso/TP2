@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
@@ -41,12 +41,12 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSalir = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnActualizar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsdEliminar = new System.Windows.Forms.ToolStripButton();
             this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
-            this.btnActualizar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -110,14 +110,15 @@
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(645, 467);
             this.dgvUsuarios.TabIndex = 0;
             // 
             // id
             // 
             this.id.DataPropertyName = "ID";
-            dataGridViewCellStyle3.NullValue = null;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = null;
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -168,6 +169,16 @@
             this.btnSalir.Values.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(462, 476);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(90, 25);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Values.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // tsUsuarios
             // 
             this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
@@ -215,16 +226,6 @@
             // kryptonManager1
             // 
             this.kryptonManager1.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.SparkleOrange;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(462, 476);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(90, 25);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Values.Text = "Actualizar";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Usuarios
             // 
