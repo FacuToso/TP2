@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Comision : BusinessEntity
+    public class Comision : BusinessEntity
     {
         #region Propiedades
 
@@ -26,17 +26,13 @@ namespace Business.Entities
             set { _Descripcion = value; }
         }
 
-        private string _IDPlan;
-        public string IDPlan
+        private int _IDPlan;
+        public int IDPlan
 
         {
             get { return _IDPlan; }
             set { _IDPlan = value; }
         }
-
-
-
-
         #endregion
     }
 }

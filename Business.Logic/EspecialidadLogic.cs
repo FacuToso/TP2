@@ -45,7 +45,5 @@ namespace Business.Logic
         {
             EspecialidadData.Save(especialidad);
         }
-
-
     }
 }
