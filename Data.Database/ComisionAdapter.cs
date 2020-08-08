@@ -170,7 +170,7 @@ namespace Data.Database
                 // PUEDE HABER ERRORES ACA , HAY QUE REVISAR
                 SqlCommand cmdSave = new SqlCommand(
                     "insert into comisiones(desc_comision,anio_especialidad,id_plan)" +
-                    "values (@desc_especialidad,@anio_especialidad,@id_plan)" +
+                    "values (@desc_comision,@anio_especialidad,@id_plan)" +
                     "select @@identity",
                     sqlConn);
 

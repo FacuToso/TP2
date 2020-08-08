@@ -41,8 +41,58 @@ namespace UI.Desktop
 
         #region Metodos
 
+        public override void MapearDeDatos()
+        {
+            this.txtID.Text = this.ComisionActual.ID.ToString();
+            this.txtDescripcion.Text = this.ComisionActual.Descripcion.ToString();
+            this.txtAnio.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.txtIDPlan.Text = this.ComisionActual.IDPlan.ToString();
+        }
+        public override void MapearADatos()
+        {
+            switch (this.ModoFormulario)
+            {
+                case ModoForm.Alta:
+                    Comision com = new Comision();
+                    this.ComisionActual = com;
 
+                    this.ComisionActual.Descripcion = this.txtDescripcion.Text;
+                    this.ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnio.Text);
+                    this.ComisionActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);
+
+                    this.ComisionActual.State = BusinessEntity.States.New;
+
+                    break;
+
+                case ModoForm.Modificacion:  
+                    this.ComisionActual.Descripcion = this.txtDescripcion.Text;
+                    this.ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnio.Text);
+                    this.ComisionActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);
+
+                    this.ComisionActual.State = BusinessEntity.States.Modified;
+                    break;
+
+                case ModoForm.Baja:
+                    this.ComisionActual.State = BusinessEntity.States.Deleted;
+                    break;
+
+                case ModoForm.Consulta:                    
+                    break;
+            }
+        }
+        public override void GuardarCambios()
+        {
+            MapearADatos();
+            ComisionLogic com = new ComisionLogic();
+            com.Save(ComisionActual);
+        }
 
         #endregion
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            GuardarCambios();
+            Close();
+        }
     }
 }
