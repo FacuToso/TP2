@@ -109,24 +109,28 @@
             this.id.DataPropertyName = "ID";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // desc
             // 
             this.desc.DataPropertyName = "descripcion";
             this.desc.HeaderText = "Descripcion";
             this.desc.Name = "desc";
+            this.desc.ReadOnly = true;
             // 
             // anioEspecialidad
             // 
             this.anioEspecialidad.DataPropertyName = "anio_especialidad";
             this.anioEspecialidad.HeaderText = "Año Especialidad";
             this.anioEspecialidad.Name = "anioEspecialidad";
+            this.anioEspecialidad.ReadOnly = true;
             // 
             // idEspecialidad
             // 
             this.idEspecialidad.DataPropertyName = "id_especialidad";
             this.idEspecialidad.HeaderText = "Especialidad";
             this.idEspecialidad.Name = "idEspecialidad";
+            this.idEspecialidad.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -159,7 +163,7 @@
             this.tsbEliminar});
             this.tsComisiones.Location = new System.Drawing.Point(3, 0);
             this.tsComisiones.Name = "tsComisiones";
-            this.tsComisiones.Size = new System.Drawing.Size(81, 25);
+            this.tsComisiones.Size = new System.Drawing.Size(112, 25);
             this.tsComisiones.TabIndex = 0;
             // 
             // tsbNuevo
@@ -171,6 +175,7 @@
             this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
             this.tsbNuevo.Text = "toolStripButton1";
             this.tsbNuevo.ToolTipText = "Nuevo";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsbEditar
             // 

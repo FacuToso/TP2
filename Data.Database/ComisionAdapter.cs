@@ -48,7 +48,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-
             return comisiones;
         }
 

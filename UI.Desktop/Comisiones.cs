@@ -28,7 +28,7 @@ namespace UI.Desktop
         {
             ComisionLogic com = new ComisionLogic();
             this.dgvComisiones.AutoGenerateColumns = false;
-            this.dgvComisiones.DataSource = com.GetOne(1);
+            this.dgvComisiones.DataSource = com.GetAll();
         }
 
         #region Eventos
@@ -45,6 +45,15 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            ComisionDesktop formespecialidad = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            formespecialidad.ShowDialog();
+            this.Listar();
+        }
         #endregion
+
+
     }
 }
