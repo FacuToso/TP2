@@ -94,5 +94,29 @@ namespace UI.Desktop
             GuardarCambios();
             Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ComisionDesktop_Load(object sender, EventArgs e)
+        {
+            switch (this.ModoFormulario)
+            {
+                case ModoForm.Alta:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Modificacion:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+            }
+        }
     }
 }

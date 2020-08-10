@@ -143,6 +143,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ComisionDesktop";
             this.Text = "ComisionDesktop";
+            this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

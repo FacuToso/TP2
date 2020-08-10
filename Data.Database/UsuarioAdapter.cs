@@ -65,9 +65,7 @@ namespace Data.Database
             List<Usuario> usuarios = new List<Usuario>();
 
             try
-            {
-
-            
+            {            
             this.OpenConnection();
 
             SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
@@ -94,7 +92,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                    new Exception("Erro al recuperar lista de usuarios", Ex);
+                    new Exception("Error al recuperar lista de usuarios", Ex);
 
                 throw ExcepcionManejada;
             }

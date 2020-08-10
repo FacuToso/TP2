@@ -101,6 +101,7 @@
             this.dgvComisiones.MultiSelect = false;
             this.dgvComisiones.Name = "dgvComisiones";
             this.dgvComisiones.ReadOnly = true;
+            this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComisiones.Size = new System.Drawing.Size(794, 390);
             this.dgvComisiones.TabIndex = 0;
             // 
@@ -113,22 +114,22 @@
             // 
             // desc
             // 
-            this.desc.DataPropertyName = "descripcion";
+            this.desc.DataPropertyName = "Descripcion";
             this.desc.HeaderText = "Descripcion";
             this.desc.Name = "desc";
             this.desc.ReadOnly = true;
             // 
             // anioEspecialidad
             // 
-            this.anioEspecialidad.DataPropertyName = "anio_especialidad";
+            this.anioEspecialidad.DataPropertyName = "AnioEspecialidad";
             this.anioEspecialidad.HeaderText = "Año Especialidad";
             this.anioEspecialidad.Name = "anioEspecialidad";
             this.anioEspecialidad.ReadOnly = true;
             // 
             // idEspecialidad
             // 
-            this.idEspecialidad.DataPropertyName = "id_especialidad";
-            this.idEspecialidad.HeaderText = "Especialidad";
+            this.idEspecialidad.DataPropertyName = "IDPlan";
+            this.idEspecialidad.HeaderText = "Plan";
             this.idEspecialidad.Name = "idEspecialidad";
             this.idEspecialidad.ReadOnly = true;
             // 
@@ -186,6 +187,7 @@
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
             this.tsbEditar.Text = "toolStripButton1";
             this.tsbEditar.ToolTipText = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbEliminar
             // 
@@ -196,6 +198,7 @@
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "toolStripButton1";
             this.tsbEliminar.ToolTipText = "Eliminar";
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // Comisiones
             // 
