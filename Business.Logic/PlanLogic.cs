@@ -31,7 +31,10 @@ namespace Business.Logic
             return PlanData.GetOne(ID);
         }
 
-        
+        public int GetOneByDesc(string descripcion)
+        {
+            return PlanData.GetOneByDesc(descripcion);
+        }
 
         public void Delete(int ID)
         {
