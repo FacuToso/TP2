@@ -35,13 +35,13 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.dgvMaterias = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
+            this.btnActualizar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSalir = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_semanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
-            this.btnActualizar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnSalir = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.TopToolStripPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.tsbEliminar});
             this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Size = new System.Drawing.Size(548, 25);
+            this.TopToolStripPanel.Size = new System.Drawing.Size(556, 25);
             this.TopToolStripPanel.TabIndex = 0;
             this.TopToolStripPanel.Text = "toolStrip1";
             // 
@@ -103,26 +103,6 @@
             this.dgvMaterias.Size = new System.Drawing.Size(548, 200);
             this.dgvMaterias.TabIndex = 4;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            // 
-            // hs_semanales
-            // 
-            this.hs_semanales.HeaderText = "Hs_Semanales";
-            this.hs_semanales.Name = "hs_semanales";
-            // 
-            // hs_totales
-            // 
-            this.hs_totales.HeaderText = "Hs_Totales";
-            this.hs_totales.Name = "hs_totales";
-            // 
             // kryptonManager1
             // 
             this.kryptonManager1.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.SparkleOrange;
@@ -145,11 +125,35 @@
             this.btnSalir.Values.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            // 
+            // hs_semanales
+            // 
+            this.hs_semanales.DataPropertyName = "hssemanales";
+            this.hs_semanales.HeaderText = "Hs_Semanales";
+            this.hs_semanales.Name = "hs_semanales";
+            // 
+            // hs_totales
+            // 
+            this.hs_totales.DataPropertyName = "hstotales";
+            this.hs_totales.HeaderText = "Hs_Totales";
+            this.hs_totales.Name = "hs_totales";
+            // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 254);
+            this.ClientSize = new System.Drawing.Size(556, 269);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvMaterias);
