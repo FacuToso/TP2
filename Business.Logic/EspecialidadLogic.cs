@@ -26,6 +26,10 @@ namespace Business.Logic
         {
             return EspecialidadData.GetAll();
         }
+        public int GetOneByDesc(string descripcion)
+        {
+            return EspecialidadData.GetOneByDesc(descripcion);
+        }
 
         public Business.Entities.Especialidad GetOne(int ID)
         {
@@ -41,7 +45,5 @@ namespace Business.Logic
         {
             EspecialidadData.Save(especialidad);
         }
-
-
     }
 }

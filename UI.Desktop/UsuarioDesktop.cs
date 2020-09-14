@@ -69,11 +69,9 @@ namespace UI.Desktop
 
             switch (this.ModoFormulario)
             {
-                case ModoForm.Alta:
-                    this.btnAceptar.Text = "Guardar";
+                case ModoForm.Alta:                    
                     Usuario user = new Usuario();
                     this.UsuarioActual = user;
-
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
                     this.UsuarioActual.Apellido = this.txtApellido.Text;
@@ -89,8 +87,6 @@ namespace UI.Desktop
 
                     break;
                 case ModoForm.Modificacion:
-                    this.btnAceptar.Text = "Guardar";
-
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
                     this.UsuarioActual.Apellido = this.txtApellido.Text;
@@ -103,13 +99,9 @@ namespace UI.Desktop
                     this.UsuarioActual.State = BusinessEntity.States.Modified;
 
                     break;
-                case ModoForm.Baja:
-                    this.btnAceptar.Text = "Eliminar";
+                case ModoForm.Baja:                    
                     this.UsuarioActual.State = BusinessEntity.States.Deleted;
-                    break;
-                case ModoForm.Consulta:
-                    this.btnAceptar.Text = "Aceptar";
-                    break;
+                    break;                                   
             }
         }
         public virtual void GuardarCambios() 
@@ -268,6 +260,25 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+            switch (this.ModoFormulario)
+            {
+                case ModoForm.Alta:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Modificacion:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+            }
         }
     }
 }

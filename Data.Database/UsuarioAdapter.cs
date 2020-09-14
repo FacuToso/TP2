@@ -60,14 +60,54 @@ namespace Data.Database
         }
         #endregion
 
+
+        public bool ValidarUser(string nomuser , string clave)
+        {
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where nombre_usuario = @nomuser and clave = @clave", sqlConn);
+                cmdUsuarios.Parameters.Add("@nomuser", SqlDbType.VarChar).Value = nomuser;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar).Value = clave;
+
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                if (drUsuarios.Read())
+                {
+                    drUsuarios.Close();
+                    return true;
+                }
+                else
+                {
+                    drUsuarios.Close();
+                    return false;
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al validar el usuario", Ex);
+
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            
+
+            
+        }
+
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();
 
             try
-            {
-
-            
+            {            
             this.OpenConnection();
 
             SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
@@ -94,7 +134,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                    new Exception("Erro al recuperar lista de usuarios", Ex);
+                    new Exception("Error al recuperar lista de usuarios", Ex);
 
                 throw ExcepcionManejada;
             }

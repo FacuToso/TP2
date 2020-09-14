@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPlanes = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsdEliminar = new System.Windows.Forms.ToolStripButton();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -103,29 +103,6 @@
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.Size = new System.Drawing.Size(616, 381);
             this.dgvPlanes.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            dataGridViewCellStyle1.NullValue = null;
-            this.id.DefaultCellStyle = dataGridViewCellStyle1;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.DataPropertyName = "IDEspecialidad";
-            this.IDEspecialidad.HeaderText = "ID-Especialidad";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            this.IDEspecialidad.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -190,6 +167,29 @@
             this.tsdEliminar.Size = new System.Drawing.Size(29, 29);
             this.tsdEliminar.Text = "Eliminar";
             this.tsdEliminar.Click += new System.EventHandler(this.tsdEliminar_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            dataGridViewCellStyle1.NullValue = null;
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // IDEspecialidad
+            // 
+            this.IDEspecialidad.DataPropertyName = "IDEspecialidad";
+            this.IDEspecialidad.HeaderText = "ID_Especialidad";
+            this.IDEspecialidad.Name = "IDEspecialidad";
+            this.IDEspecialidad.ReadOnly = true;
             // 
             // Planes
             // 

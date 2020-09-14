@@ -23,6 +23,11 @@ namespace Business.Logic
             set { _UsuarioData = value; }
         }
 
+        public bool ValidarUser(string nomuser, string clave)
+        {
+            return UsuarioData.ValidarUser(nomuser,clave);
+        }
+
         public List<Usuario> GetAll()
         {
             return UsuarioData.GetAll();

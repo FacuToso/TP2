@@ -24,6 +24,8 @@ namespace UI.Desktop
             PlanLogic pl = new PlanLogic();
             this.dgvPlanes.AutoGenerateColumns = false;
             this.dgvPlanes.DataSource = pl.GetAll();
+            
+            
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

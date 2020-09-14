@@ -36,7 +36,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbIDEspecialidad = new System.Windows.Forms.Label();
-            this.txtIdEspecialidad = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbIDEspecialidad, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdEspecialidad, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -71,10 +71,10 @@
             // 
             this.lbID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(109, 4);
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(111, 5);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(25, 20);
+            this.lbID.Size = new System.Drawing.Size(23, 17);
             this.lbID.TabIndex = 1;
             this.lbID.Text = "ID";
             // 
@@ -82,26 +82,26 @@
             // 
             this.lbDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbDescripcion.AutoSize = true;
-            this.lbDescripcion.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescripcion.Location = new System.Drawing.Point(38, 79);
+            this.lbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescripcion.Location = new System.Drawing.Point(41, 80);
             this.lbDescripcion.Name = "lbDescripcion";
-            this.lbDescripcion.Size = new System.Drawing.Size(96, 20);
+            this.lbDescripcion.Size = new System.Drawing.Size(93, 17);
             this.lbDescripcion.TabIndex = 12;
             this.lbDescripcion.Text = "Descripcion";
             // 
             // txtID
             // 
-            this.txtID.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(140, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(135, 22);
+            this.txtID.Size = new System.Drawing.Size(135, 21);
             this.txtID.TabIndex = 18;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(140, 31);
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(140, 30);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(342, 116);
@@ -133,20 +133,20 @@
             // 
             this.lbIDEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbIDEspecialidad.AutoSize = true;
-            this.lbIDEspecialidad.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDEspecialidad.Location = new System.Drawing.Point(3, 154);
+            this.lbIDEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIDEspecialidad.Location = new System.Drawing.Point(3, 156);
             this.lbIDEspecialidad.Name = "lbIDEspecialidad";
-            this.lbIDEspecialidad.Size = new System.Drawing.Size(131, 20);
+            this.lbIDEspecialidad.Size = new System.Drawing.Size(131, 17);
             this.lbIDEspecialidad.TabIndex = 27;
             this.lbIDEspecialidad.Text = "ID - Especialidad";
             // 
-            // txtIdEspecialidad
+            // comboBox1
             // 
-            this.txtIdEspecialidad.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEspecialidad.Location = new System.Drawing.Point(140, 153);
-            this.txtIdEspecialidad.Name = "txtIdEspecialidad";
-            this.txtIdEspecialidad.Size = new System.Drawing.Size(135, 22);
-            this.txtIdEspecialidad.TabIndex = 28;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(140, 154);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 28;
             // 
             // PlanDesktop
             // 
@@ -156,6 +156,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanDesktop";
             this.Text = "PlanDesktop";
+            this.Load += new System.EventHandler(this.PlanDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,6 +173,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lbIDEspecialidad;
-        private System.Windows.Forms.TextBox txtIdEspecialidad;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

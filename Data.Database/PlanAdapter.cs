@@ -49,6 +49,8 @@ namespace Data.Database
             return planes;
         }
 
+        
+
         public Business.Entities.Plan GetOne(int ID)
         {
             Plan pln = new Plan();
@@ -81,6 +83,39 @@ namespace Data.Database
             }
 
             return pln;
+
+        }
+
+        public int GetOneByDesc(string descripcion)
+
+        {
+            int Id;
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdPlan = new SqlCommand("select id_plan from PLANES where desc_plan = @descripcion ", sqlConn);
+                cmdPlan.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = descripcion;
+
+                Id = Convert.ToInt32(cmdPlan.ExecuteScalar());
+
+
+
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar lista de Planes", Ex);
+
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return Id;
 
         }
         public void Delete(int ID)

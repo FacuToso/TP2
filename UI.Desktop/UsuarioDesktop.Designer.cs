@@ -89,10 +89,10 @@
             // 
             this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHabilitado.Location = new System.Drawing.Point(249, 3);
+            this.chkHabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHabilitado.Location = new System.Drawing.Point(241, 3);
             this.chkHabilitado.Name = "chkHabilitado";
-            this.chkHabilitado.Size = new System.Drawing.Size(98, 22);
+            this.chkHabilitado.Size = new System.Drawing.Size(99, 20);
             this.chkHabilitado.TabIndex = 1;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
@@ -101,10 +101,10 @@
             // 
             this.lbID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(47, 4);
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(44, 5);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(25, 20);
+            this.lbID.Size = new System.Drawing.Size(23, 17);
             this.lbID.TabIndex = 1;
             this.lbID.Text = "ID";
             // 
@@ -112,10 +112,10 @@
             // 
             this.lbNombre.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.Location = new System.Drawing.Point(3, 32);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(69, 20);
+            this.lbNombre.Size = new System.Drawing.Size(64, 17);
             this.lbNombre.TabIndex = 12;
             this.lbNombre.Text = "Nombre";
             // 
@@ -123,10 +123,10 @@
             // 
             this.lbEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(22, 60);
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(20, 59);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(50, 20);
+            this.lbEmail.Size = new System.Drawing.Size(47, 17);
             this.lbEmail.TabIndex = 13;
             this.lbEmail.Text = "Email";
             // 
@@ -134,10 +134,10 @@
             // 
             this.lbClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbClave.AutoSize = true;
-            this.lbClave.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClave.Location = new System.Drawing.Point(23, 88);
+            this.lbClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClave.Location = new System.Drawing.Point(19, 86);
             this.lbClave.Name = "lbClave";
-            this.lbClave.Size = new System.Drawing.Size(49, 20);
+            this.lbClave.Size = new System.Drawing.Size(48, 17);
             this.lbClave.TabIndex = 14;
             this.lbClave.Text = "Clave";
             // 
@@ -145,10 +145,10 @@
             // 
             this.lbApellido.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbApellido.AutoSize = true;
-            this.lbApellido.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApellido.Location = new System.Drawing.Point(293, 32);
+            this.lbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApellido.Location = new System.Drawing.Point(286, 32);
             this.lbApellido.Name = "lbApellido";
-            this.lbApellido.Size = new System.Drawing.Size(69, 20);
+            this.lbApellido.Size = new System.Drawing.Size(66, 17);
             this.lbApellido.TabIndex = 15;
             this.lbApellido.Text = "Apellido";
             // 
@@ -156,10 +156,10 @@
             // 
             this.lbUsuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(297, 60);
+            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.Location = new System.Drawing.Point(288, 59);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(65, 20);
+            this.lbUsuario.Size = new System.Drawing.Size(64, 17);
             this.lbUsuario.TabIndex = 16;
             this.lbUsuario.Text = "Usuario";
             // 
@@ -167,74 +167,74 @@
             // 
             this.lbConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbConfirmarClave.AutoSize = true;
-            this.lbConfirmarClave.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirmarClave.Location = new System.Drawing.Point(234, 88);
+            this.lbConfirmarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConfirmarClave.Location = new System.Drawing.Point(229, 86);
             this.lbConfirmarClave.Name = "lbConfirmarClave";
-            this.lbConfirmarClave.Size = new System.Drawing.Size(128, 20);
+            this.lbConfirmarClave.Size = new System.Drawing.Size(123, 17);
             this.lbConfirmarClave.TabIndex = 17;
             this.lbConfirmarClave.Text = "Confirmar Clave";
             // 
             // txtID
             // 
-            this.txtID.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(78, 3);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(73, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(150, 22);
+            this.txtID.Size = new System.Drawing.Size(150, 21);
             this.txtID.TabIndex = 18;
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(78, 31);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(73, 30);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(150, 22);
+            this.txtNombre.Size = new System.Drawing.Size(150, 21);
             this.txtNombre.TabIndex = 19;
             // 
             // txtApellido
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(368, 31);
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(358, 30);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(150, 22);
+            this.txtApellido.Size = new System.Drawing.Size(150, 21);
             this.txtApellido.TabIndex = 20;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(368, 59);
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(358, 57);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(150, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(150, 21);
             this.txtUsuario.TabIndex = 21;
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(78, 59);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(73, 57);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 22);
+            this.txtEmail.Size = new System.Drawing.Size(150, 21);
             this.txtEmail.TabIndex = 22;
             // 
             // txtConfirmarClave
             // 
-            this.txtConfirmarClave.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarClave.Location = new System.Drawing.Point(368, 87);
+            this.txtConfirmarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarClave.Location = new System.Drawing.Point(358, 84);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.Size = new System.Drawing.Size(150, 22);
+            this.txtConfirmarClave.Size = new System.Drawing.Size(150, 21);
             this.txtConfirmarClave.TabIndex = 23;
             // 
             // txtClave
             // 
-            this.txtClave.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(78, 87);
+            this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Location = new System.Drawing.Point(73, 84);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(150, 22);
+            this.txtClave.Size = new System.Drawing.Size(150, 21);
             this.txtClave.TabIndex = 24;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Location = new System.Drawing.Point(410, 118);
+            this.btnCancelar.Location = new System.Drawing.Point(405, 116);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 26;
@@ -245,7 +245,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(260, 118);
+            this.btnAceptar.Location = new System.Drawing.Point(253, 116);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 25;
@@ -262,6 +262,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
             this.Text = "UsuarioDesktop";
+            this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

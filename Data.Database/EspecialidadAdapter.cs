@@ -51,6 +51,39 @@ namespace Data.Database
             return especialidades;
         }
 
+        public int GetOneByDesc(string descripcion)
+
+        {
+            int Id;
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdEspecialidad = new SqlCommand("select id_especialidad from ESPECIALIDADES where desc_especialidad = @descripcion ", sqlConn);
+                cmdEspecialidad.Parameters.Add("@descripcion", SqlDbType.VarChar,50).Value = descripcion;
+
+                Id = Convert.ToInt32(cmdEspecialidad.ExecuteScalar());
+
+
+
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar lista de Planes", Ex);
+
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return Id;
+
+        }
+
         public Business.Entities.Especialidad GetOne(int ID)
         {
             Especialidad esp = new Especialidad();

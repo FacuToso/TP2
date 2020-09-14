@@ -109,7 +109,21 @@ namespace UI.Desktop
 
         private void EspecialidadDesktop_Load(object sender, EventArgs e)
         {
-
+            switch (this.ModoFormulario)
+            {
+                case ModoForm.Alta:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Modificacion:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+            }
         }
     }
 }
