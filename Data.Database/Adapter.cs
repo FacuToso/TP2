@@ -26,8 +26,8 @@ namespace Data.Database
 
             // ESTO ESTA MAL PERO FUNCIONA
             // PASO 10 11 12 LAB 05
-            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = tp2_net; Integrated Security = true");
-            sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
+            sqlConn = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = tp2_net; Integrated Security = true");
+            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
 
             sqlConn.Open();
 

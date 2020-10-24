@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Personas
+   public class Personas : BusinessEntity
     {
         #region Propiedades
 
