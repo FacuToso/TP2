@@ -1,33 +1,33 @@
-﻿using Business.Logic;
-using Business.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Business.Entities;
+using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Materias : System.Web.UI.Page
-    {
+    public partial class Especialidades : System.Web.UI.Page
+    {        
         #region Atributos
 
-        private Materia Entity;
+        private Especialidad Entity;
 
         #endregion
 
         #region Propiedades
 
-        MateriaLogic _logic;
+        EspecialidadLogic _logic;
 
-        private MateriaLogic Logic
+        private EspecialidadLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new MateriaLogic();
+                    _logic = new EspecialidadLogic();
                 }
                 return _logic;
             }
@@ -84,34 +84,26 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
+            idTextBox.Text = Entity.ID.ToString();
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-            hsSemanalesTextBox.Text = Entity.HSSemanales.ToString();
-            hsTotalesTextBox.Text = Entity.HSTotales.ToString();
-            idPlanTextBox.Text = Entity.IDPlan.ToString();
         }
 
-        private void LoadEntity(Materia materia)
+        private void LoadEntity(Especialidad especialidad)
         {
-            materia.Descripcion = descripcionTextBox.Text;
-            materia.HSSemanales = Convert.ToInt32(hsSemanalesTextBox.Text);
-            materia.HSTotales = Convert.ToInt32(hsSemanalesTextBox.Text);
-            materia.IDPlan = Convert.ToInt32(idPlanTextBox.Text);
+            especialidad.Descripcion = descripcionTextBox.Text;           
+
         }
 
         private void EnableForm(bool enable)
         {
             descripcionTextBox.Enabled = enable;
-            hsSemanalesTextBox.Enabled = enable;
-            hsTotalesTextBox.Enabled = enable;
-            idPlanTextBox.Enabled = enable;
+            idTextBox.Enabled = enable;
         }
 
         private void ClearForm()
         {
             descripcionTextBox.Text = string.Empty;
-            hsTotalesTextBox.Text = string.Empty;
-            hsSemanalesTextBox.Text = string.Empty;
-            idPlanTextBox.Text = string.Empty;
+            idTextBox.Text = string.Empty;
         }
 
         private void DeleteEntity(int id)
@@ -119,9 +111,9 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(Materia materia)
+        private void SaveEntity(Especialidad especialidad)
         {
-            Logic.Save(materia);
+            Logic.Save(especialidad);
         }
         #endregion
 
@@ -145,7 +137,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Materia();
+                    this.Entity = new Especialidad();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -155,7 +147,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Materia();
+                    this.Entity = new Especialidad();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
@@ -173,7 +165,7 @@ namespace UI.Web
         {
             formPanel.Visible = false;
             gridActionsPanel.Visible = true;
-            LoadGrid();            
+            LoadGrid();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -209,7 +201,5 @@ namespace UI.Web
         }
 
         #endregion
-
-
     }
 }
