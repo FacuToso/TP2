@@ -9,25 +9,25 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Comisiones : System.Web.UI.Page
+    public partial class Cursos : System.Web.UI.Page
     {
         #region Atributos
 
-        private Comision Entity;
+        private Curso Entity;
 
         #endregion
 
         #region Propiedades
 
-        ComisionLogic _logic;
+        CursoLogic _logic;
 
-        private ComisionLogic Logic
+        private CursoLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new ComisionLogic();
+                    _logic = new CursoLogic();
                 }
                 return _logic;
             }
@@ -83,32 +83,36 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            Entity =Logic.GetOne(id);
+            Entity = Logic.GetOne(id);
             idTextBox.Text = Entity.ID.ToString();
-            descripcionTextBox.Text = Entity.Descripcion;
-            idPlanDropDownList.Text = Entity.IDPlan.ToString();
-            anioEspecialidadTextBox.Text = Entity.AnioEspecialidad.ToString();
+            cupoTextBox.Text = Entity.Cupo.ToString();
+            idMateriaDropDownList.Text = Entity.IDMateria.ToString();
+            anioCalendarioTextBox.Text = Entity.AnioCalendario.ToString();
+            idComisionDropDownList.Text = Entity.IDComision.ToString();
         }
 
-        private void LoadEntity(Comision comision)
+        private void LoadEntity(Curso curso)
         {
-            comision.Descripcion = descripcionTextBox.Text;
-            comision.AnioEspecialidad = Convert.ToInt32(anioEspecialidadTextBox.Text);
-            comision.IDPlan = Convert.ToInt32(idPlanDropDownList.Text);
+            curso.IDComision = Convert.ToInt32(idComisionDropDownList.Text);
+            curso.IDMateria = Convert.ToInt32(idMateriaDropDownList.Text);
+            curso.AnioCalendario = Convert.ToInt32(anioCalendarioTextBox.Text);
+            curso.Cupo = Convert.ToInt32(cupoTextBox.Text);
         }
 
         private void EnableForm(bool enable)
         {
-            descripcionTextBox.Enabled = enable;
+            idMateriaDropDownList.Enabled = enable;
             idTextBox.Enabled = enable;
-            anioEspecialidadTextBox.Enabled = enable;
-            idPlanDropDownList.Enabled = enable;
+            anioCalendarioTextBox.Enabled = enable;
+            idComisionDropDownList.Enabled = enable;
+            cupoTextBox.Enabled = enable;
         }
 
         private void ClearForm()
         {
-            descripcionTextBox.Text = string.Empty;
+            cupoTextBox.Text = string.Empty;
             idTextBox.Text = string.Empty;
+            anioCalendarioTextBox.Text = string.Empty;
         }
 
         private void DeleteEntity(int id)
@@ -116,9 +120,9 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(Comision comision)
+        private void SaveEntity(Curso curso)
         {
-            Logic.Save(comision);
+            Logic.Save(curso);
         }
         #endregion
 
@@ -129,12 +133,17 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 LoadGrid();
-                
-                PlanLogic plan = new PlanLogic();
-                List<Plan> planes = plan.GetAll();
-                foreach (var pl in planes)
+                ComisionLogic comisionLogic = new ComisionLogic();
+                List<Comision> comisions = comisionLogic.GetAll();
+                foreach (var cm in comisions)
                 {
-                    idPlanDropDownList.Items.Add(pl.ID.ToString());
+                    idComisionDropDownList.Items.Add(cm.ID.ToString());
+                }
+                MateriaLogic materiaLogic = new MateriaLogic();
+                List<Materia> materias = materiaLogic.GetAll();
+                foreach (var mt in materias)
+                {
+                    idMateriaDropDownList.Items.Add(mt.ID.ToString());
                 }
             }
         }
@@ -149,7 +158,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Comision();
+                    this.Entity = new Curso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -159,7 +168,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Comision();
+                    this.Entity = new Curso();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);

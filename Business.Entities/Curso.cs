@@ -25,12 +25,15 @@ namespace Business.Entities
             set { _Cupo = value; }
         }
 
+        // esto creo que no va
+        /*
         private string _Descripcion;
         public string Descripcion
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
+        */
 
         private int _IDComision;
         public int IDComision
