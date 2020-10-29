@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-
   <siteMapNode url="~/Default.aspx" title="Menu"  description="">
     <siteMapNode url="~/login.aspx" title="Login"  description="" />
     <siteMapNode url="~/Usuarios.aspx" title="Usuario"  description="" />
@@ -8,10 +7,7 @@
 	<siteMapNode url="~/Especialidades.aspx" title="Especialidades"  description="" />
 	<siteMapNode url="~/Planes.aspx" title="Planes"  description="" />
 	<siteMapNode url="~/Comisiones.aspx" title="Comisiones"  description="" />
-	<siteMapNode url="~/Alumnos.aspx" title="Alumnos"  description="" />
+	<siteMapNode url="~/AlumnosInscripciones.aspx" title="Inscripciones a Cursos"  description="" />
 	<siteMapNode url="~/Cursos.aspx" title="Cursos"  description="" />
-  </siteMapNode>
-	
-	
-	
+  </siteMapNode>	
 </siteMap>
