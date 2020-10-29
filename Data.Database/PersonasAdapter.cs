@@ -162,10 +162,9 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                //CAPAS QUE HAY ERROR ACA NO ESTA REVISADO
                 SqlCommand cmdSave = new SqlCommand(
-                    "UPDATE personas SET nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email , telefono = @telefono, fecha_nac = @fechanac, legajo = @legajo, tipo_persona= @tipopersona,id_plan = @idplan" +
-                    "WHERE id_materia = @id" + sqlConn);
+                    "UPDATE personas SET nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email , telefono = @telefono, fecha_nac = @fecha_nac, legajo = @legajo, tipo_persona= @tipo_persona, id_plan = @id_plan " +
+                    "WHERE id_persona = @id", sqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;

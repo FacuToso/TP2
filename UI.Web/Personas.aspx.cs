@@ -9,25 +9,25 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class AlumnosInscripciones : System.Web.UI.Page
+    public partial class Personas : System.Web.UI.Page
     {
         #region Atributos
 
-        private AlumnoInscripcion Entity;
+        private Business.Entities.Personas Entity;
 
         #endregion
 
         #region Propiedades
 
-        AlumnoInscripcionLogic _logic;
+        PersonasLogic _logic;
 
-        private AlumnoInscripcionLogic Logic
+        private PersonasLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new AlumnoInscripcionLogic();
+                    _logic = new PersonasLogic();
                 }
                 return _logic;
             }
@@ -85,42 +85,53 @@ namespace UI.Web
         {
             Entity = Logic.GetOne(id);
             idTextBox.Text = Entity.ID.ToString();
-            notaTextBox.Text = Entity.Nota.ToString();
-            idCursoDropDownList.Text = Entity.IDCurso.ToString();
-            condicionTextBox.Text = Entity.Condicion;
-            idAlumnoDropDownList.Text = Entity.IDAlumno.ToString();
+            nombreTextBox.Text = Entity.Nombre;
+            apellidoTextBox.Text = Entity.Apellido;
+            direccionTextBox.Text = Entity.Direccion;
+            emailTextBox.Text = Entity.Email;
+            telefonoTextBox.Text = Entity.Telefono;
+            fechaNacimientoTextBox.Text = Entity.FechaNacimiento.ToString();
+            legajoTextBox.Text = Entity.Legajo.ToString();
+            tipoPersonaDropDownList.Text = ((int)Entity.TipoPersona).ToString();
+            idPlanDropDownList.Text = Entity.IDPlan.ToString();
         }
 
-        private void LoadEntity(AlumnoInscripcion alumnoInscripcion)
+        private void LoadEntity(Business.Entities.Personas persona)
         {
-            alumnoInscripcion.IDAlumno = Convert.ToInt32(idAlumnoDropDownList.Text);
-            alumnoInscripcion.IDCurso = Convert.ToInt32(idCursoDropDownList.Text);
-            if (notaTextBox.Text.Equals(""))
-            {
-                
-            }
-            else
-            {
-                alumnoInscripcion.Nota = Convert.ToInt32(notaTextBox.Text);
-            }
-            
-            alumnoInscripcion.Condicion = condicionTextBox.Text;
+            persona.Nombre = nombreTextBox.Text;
+            persona.Apellido = apellidoTextBox.Text;
+            persona.Direccion = direccionTextBox.Text;
+            persona.Email = emailTextBox.Text;
+            persona.FechaNacimiento = Convert.ToDateTime(fechaNacimientoTextBox.Text);
+            persona.IDPlan = Convert.ToInt32(idPlanDropDownList.Text);
+            persona.Legajo = Convert.ToInt32(legajoTextBox.Text);
+            persona.TipoPersona = (Business.Entities.Personas.TiposPersonas)Convert.ToInt32(tipoPersonaDropDownList.Text);
+            persona.Telefono = telefonoTextBox.Text;
         }
 
         private void EnableForm(bool enable)
         {
-            idAlumnoDropDownList.Enabled = enable;
             idTextBox.Enabled = enable;
-            condicionTextBox.Enabled = enable;
-            idCursoDropDownList.Enabled = enable;
-            notaTextBox.Enabled = enable;
+            nombreTextBox.Enabled = enable;
+            apellidoTextBox.Enabled = enable;
+            direccionTextBox.Enabled = enable;
+            emailTextBox.Enabled = enable;
+            fechaNacimientoTextBox.Enabled = enable;
+            legajoTextBox.Enabled = enable;
+            tipoPersonaDropDownList.Enabled = enable;
+            idPlanDropDownList.Enabled = enable;
+
         }
 
         private void ClearForm()
         {
-            notaTextBox.Text = string.Empty;
             idTextBox.Text = string.Empty;
-            condicionTextBox.Text = string.Empty;
+            nombreTextBox.Text = string.Empty;
+            apellidoTextBox.Text = string.Empty;
+            direccionTextBox.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
+            fechaNacimientoTextBox.Text = string.Empty;
+            legajoTextBox.Text = string.Empty;
         }
 
         private void DeleteEntity(int id)
@@ -128,9 +139,9 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(AlumnoInscripcion alumnoInscripcion)
+        private void SaveEntity(Business.Entities.Personas persona)
         {
-            Logic.Save(alumnoInscripcion);
+            Logic.Save(persona);
         }
         #endregion
 
@@ -141,18 +152,16 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 LoadGrid();
-                CursoLogic cursoLogic = new CursoLogic();
-                List<Curso> cursos = cursoLogic.GetAll();
-                foreach (var cr in cursos)
+
+                PlanLogic plan = new PlanLogic();
+                List<Plan> planes = plan.GetAll();
+                foreach (var pl in planes)
                 {
-                    idCursoDropDownList.Items.Add(cr.ID.ToString());
+                    idPlanDropDownList.Items.Add(pl.ID.ToString());
                 }
-                PersonasLogic personasLogic = new PersonasLogic();
-                List<Business.Entities.Personas> personas = personasLogic.GetAll();
-                foreach (var pr in personas)
+                for(int i = 0; i < 4; i++)
                 {
-                    //Falta validar que las personas sean alumnos
-                    idAlumnoDropDownList.Items.Add(pr.ID.ToString());
+                    tipoPersonaDropDownList.Items.Add(i.ToString());
                 }
             }
         }
@@ -167,7 +176,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new AlumnoInscripcion();
+                    this.Entity = new Business.Entities.Personas();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -177,7 +186,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new AlumnoInscripcion();
+                    this.Entity = new Business.Entities.Personas();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
