@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-   public class Personas : BusinessEntity
+   public class Persona : BusinessEntity
     {
         #region Propiedades
 
@@ -68,8 +68,8 @@ namespace Business.Entities
 
         public enum TiposPersonas
         {
-            Tipo1,
-            Tipo2,
+            Profesor,
+            Alumno,
             Tipo3,
             Tipo4
         }

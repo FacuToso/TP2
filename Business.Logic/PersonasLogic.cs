@@ -20,9 +20,14 @@ namespace Business.Logic
             PersonaData = new Data.Database.PersonasAdapter();
         }
 
-        public List<Personas> GetAll()
+        public List<Persona> GetAll()
         {
             return PersonaData.GetAll();
+        }
+
+        public List<Persona> GetAllTipo(Persona.TiposPersonas tipo)
+        {
+            return PersonaData.GetAllTipo(tipo);
         }
 
         //public int GetOneByDesc(string descripcion)
@@ -30,7 +35,7 @@ namespace Business.Logic
         //    return MateriaData.GetOneByDesc(descripcion);
         //}
 
-        public Business.Entities.Personas GetOne(int ID)
+        public Business.Entities.Persona GetOne(int ID)
         {
             return PersonaData.GetOne(ID);
         }
@@ -40,7 +45,7 @@ namespace Business.Logic
             PersonaData.Delete(ID);
         }
 
-        public void Save(Business.Entities.Personas persona)
+        public void Save(Business.Entities.Persona persona)
         {
             PersonaData.Save(persona);
         }

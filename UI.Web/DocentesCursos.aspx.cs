@@ -4,30 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Business.Entities;
 using Business.Logic;
+using Business.Entities;
 
 namespace UI.Web
 {
-    public partial class Planes : System.Web.UI.Page
+    public partial class DocentesCursos : System.Web.UI.Page
     {
         #region Atributos
 
-        private Plan Entity;
+        private DocenteCurso Entity;
 
         #endregion
 
         #region Propiedades
 
-        PlanLogic _logic;
+        DocenteCursoLogic _logic;
 
-        private PlanLogic Logic
+        private DocenteCursoLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new PlanLogic();
+                    _logic = new DocenteCursoLogic();
                 }
                 return _logic;
             }
@@ -83,29 +83,31 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            Entity = Logic.GetOne(id);
             idTextBox.Text = Entity.ID.ToString();
-            this.descripcionTextBox.Text = this.Entity.Descripcion;
-            idEspecialidadDropDownList.Text = Entity.IDEspecialidad.ToString();
+            cargoDropDownList.Text = ((int)Entity.Cargo).ToString();
+            idCursoDropDownList.Text = Entity.IDCurso.ToString();
+            idDocenteDropDownList.Text = Entity.IDDocente.ToString();
         }
 
-        private void LoadEntity(Plan plan)
+        private void LoadEntity(DocenteCurso docenteCurso)
         {
-            plan.Descripcion = descripcionTextBox.Text;
-            plan.IDEspecialidad = Convert.ToInt32(idEspecialidadDropDownList.Text);
+            docenteCurso.IDCurso = Convert.ToInt32(idCursoDropDownList.Text);
+            docenteCurso.IDDocente = Convert.ToInt32(idDocenteDropDownList.Text);
+            docenteCurso.Cargo = (DocenteCurso.TiposCargos)(Convert.ToInt32(cargoDropDownList.Text));
         }
 
         private void EnableForm(bool enable)
         {
-            descripcionTextBox.Enabled = enable;
+            idDocenteDropDownList.Enabled = enable;
             idTextBox.Enabled = enable;
-            idEspecialidadDropDownList.Enabled = enable;
+            cargoDropDownList.Enabled = enable;
+            idCursoDropDownList.Enabled = enable;
         }
 
         private void ClearForm()
         {
-            descripcionTextBox.Text = string.Empty;
-            idTextBox.Text = string.Empty;
+            idTextBox.Text = string.Empty;            
         }
 
         private void DeleteEntity(int id)
@@ -113,9 +115,9 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(Plan plan)
+        private void SaveEntity(DocenteCurso docenteCurso)
         {
-            Logic.Save(plan);
+            Logic.Save(docenteCurso);
         }
         #endregion
 
@@ -126,13 +128,19 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 LoadGrid();
-
-                EspecialidadLogic especialidad = new EspecialidadLogic();
-                List<Especialidad> esp = especialidad.GetAll();
-                foreach (var es in esp)
+                CursoLogic cursoLogic = new CursoLogic();
+                List<Curso> cursos = cursoLogic.GetAll();
+                foreach (var cr in cursos)
                 {
-                    idEspecialidadDropDownList.Items.Add(es.ID.ToString());
-                }  
+                    idCursoDropDownList.Items.Add(cr.ID.ToString());
+                }
+                PersonasLogic personasLogic = new PersonasLogic();
+                List<Business.Entities.Persona> docentes = personasLogic.GetAllTipo(Persona.TiposPersonas.Profesor);
+                foreach (var dc in docentes)
+                {
+                    idDocenteDropDownList.Items.Add(dc.ID.ToString());
+                    
+                }
             }
         }
 
@@ -146,7 +154,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Plan();
+                    this.Entity = new DocenteCurso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -156,7 +164,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Plan();
+                    this.Entity = new DocenteCurso();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);

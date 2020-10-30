@@ -148,11 +148,13 @@ namespace UI.Web
                     idCursoDropDownList.Items.Add(cr.ID.ToString());
                 }
                 PersonasLogic personasLogic = new PersonasLogic();
-                List<Business.Entities.Personas> personas = personasLogic.GetAll();
+                List<Business.Entities.Persona> personas = personasLogic.GetAll();
                 foreach (var pr in personas)
                 {
-                    //Falta validar que las personas sean alumnos
-                    idAlumnoDropDownList.Items.Add(pr.ID.ToString());
+                    if (pr.TipoPersona == Business.Entities.Persona.TiposPersonas.Alumno)
+                    {
+                        idAlumnoDropDownList.Items.Add(pr.ID.ToString());
+                    }
                 }
             }
         }

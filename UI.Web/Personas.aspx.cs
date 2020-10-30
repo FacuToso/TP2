@@ -13,7 +13,7 @@ namespace UI.Web
     {
         #region Atributos
 
-        private Business.Entities.Personas Entity;
+        private Business.Entities.Persona Entity;
 
         #endregion
 
@@ -96,7 +96,7 @@ namespace UI.Web
             idPlanDropDownList.Text = Entity.IDPlan.ToString();
         }
 
-        private void LoadEntity(Business.Entities.Personas persona)
+        private void LoadEntity(Business.Entities.Persona persona)
         {
             persona.Nombre = nombreTextBox.Text;
             persona.Apellido = apellidoTextBox.Text;
@@ -105,7 +105,7 @@ namespace UI.Web
             persona.FechaNacimiento = Convert.ToDateTime(fechaNacimientoTextBox.Text);
             persona.IDPlan = Convert.ToInt32(idPlanDropDownList.Text);
             persona.Legajo = Convert.ToInt32(legajoTextBox.Text);
-            persona.TipoPersona = (Business.Entities.Personas.TiposPersonas)Convert.ToInt32(tipoPersonaDropDownList.Text);
+            persona.TipoPersona = (Business.Entities.Persona.TiposPersonas)Convert.ToInt32(tipoPersonaDropDownList.Text);
             persona.Telefono = telefonoTextBox.Text;
         }
 
@@ -139,7 +139,7 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(Business.Entities.Personas persona)
+        private void SaveEntity(Business.Entities.Persona persona)
         {
             Logic.Save(persona);
         }
@@ -176,7 +176,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Business.Entities.Personas();
+                    this.Entity = new Business.Entities.Persona();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -186,7 +186,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Business.Entities.Personas();
+                    this.Entity = new Business.Entities.Persona();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);

@@ -9,25 +9,25 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Planes : System.Web.UI.Page
+    public partial class Profesores : System.Web.UI.Page
     {
         #region Atributos
 
-        private Plan Entity;
+        private Persona Entity;
 
         #endregion
 
         #region Propiedades
 
-        PlanLogic _logic;
+        PersonasLogic _logic;
 
-        private PlanLogic Logic
+        private PersonasLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new PlanLogic();
+                    _logic = new PersonasLogic();
                 }
                 return _logic;
             }
@@ -77,35 +77,61 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataSource = this.Logic.GetAllTipo(Persona.TiposPersonas.Profesor);
             this.gridView.DataBind();
         }
 
         private void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            Entity = Logic.GetOne(id);
             idTextBox.Text = Entity.ID.ToString();
-            this.descripcionTextBox.Text = this.Entity.Descripcion;
-            idEspecialidadDropDownList.Text = Entity.IDEspecialidad.ToString();
+            nombreTextBox.Text = Entity.Nombre;
+            apellidoTextBox.Text = Entity.Apellido;
+            direccionTextBox.Text = Entity.Direccion;
+            emailTextBox.Text = Entity.Email;
+            telefonoTextBox.Text = Entity.Telefono;
+            fechaNacimientoTextBox.Text = Entity.FechaNacimiento.ToString();
+            legajoTextBox.Text = Entity.Legajo.ToString();
+            tipoPersonaTextBox.Text = ((int)Entity.TipoPersona).ToString();
+            idPlanDropDownList.Text = Entity.IDPlan.ToString();
         }
 
-        private void LoadEntity(Plan plan)
+        private void LoadEntity(Business.Entities.Persona persona)
         {
-            plan.Descripcion = descripcionTextBox.Text;
-            plan.IDEspecialidad = Convert.ToInt32(idEspecialidadDropDownList.Text);
+            persona.Nombre = nombreTextBox.Text;
+            persona.Apellido = apellidoTextBox.Text;
+            persona.Direccion = direccionTextBox.Text;
+            persona.Email = emailTextBox.Text;
+            persona.FechaNacimiento = Convert.ToDateTime(fechaNacimientoTextBox.Text);
+            persona.IDPlan = Convert.ToInt32(idPlanDropDownList.Text);
+            persona.Legajo = Convert.ToInt32(legajoTextBox.Text);
+            persona.TipoPersona = Persona.TiposPersonas.Profesor;
+            persona.Telefono = telefonoTextBox.Text;
         }
 
         private void EnableForm(bool enable)
         {
-            descripcionTextBox.Enabled = enable;
             idTextBox.Enabled = enable;
-            idEspecialidadDropDownList.Enabled = enable;
+            nombreTextBox.Enabled = enable;
+            apellidoTextBox.Enabled = enable;
+            direccionTextBox.Enabled = enable;
+            emailTextBox.Enabled = enable;
+            fechaNacimientoTextBox.Enabled = enable;
+            legajoTextBox.Enabled = enable;
+            tipoPersonaTextBox.Enabled = enable;
+            idPlanDropDownList.Enabled = enable;
+
         }
 
         private void ClearForm()
         {
-            descripcionTextBox.Text = string.Empty;
             idTextBox.Text = string.Empty;
+            nombreTextBox.Text = string.Empty;
+            apellidoTextBox.Text = string.Empty;
+            direccionTextBox.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
+            fechaNacimientoTextBox.Text = string.Empty;
+            legajoTextBox.Text = string.Empty;
         }
 
         private void DeleteEntity(int id)
@@ -113,9 +139,9 @@ namespace UI.Web
             Logic.Delete(id);
         }
 
-        private void SaveEntity(Plan plan)
+        private void SaveEntity(Persona persona)
         {
-            Logic.Save(plan);
+            Logic.Save(persona);
         }
         #endregion
 
@@ -127,12 +153,14 @@ namespace UI.Web
             {
                 LoadGrid();
 
-                EspecialidadLogic especialidad = new EspecialidadLogic();
-                List<Especialidad> esp = especialidad.GetAll();
-                foreach (var es in esp)
+                tipoPersonaTextBox.Text = "0";
+
+                PlanLogic plan = new PlanLogic();
+                List<Plan> planes = plan.GetAll();
+                foreach (var pl in planes)
                 {
-                    idEspecialidadDropDownList.Items.Add(es.ID.ToString());
-                }  
+                    idPlanDropDownList.Items.Add(pl.ID.ToString());
+                }
             }
         }
 
@@ -146,7 +174,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Plan();
+                    this.Entity = new Persona();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -156,7 +184,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Plan();
+                    this.Entity = new Persona();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);

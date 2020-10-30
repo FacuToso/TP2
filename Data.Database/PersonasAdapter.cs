@@ -12,9 +12,9 @@ namespace Data.Database
 {
    public class PersonasAdapter: Adapter
     {
-        public List<Personas> GetAll()
+        public List<Persona> GetAll()
         {
-            List<Personas> personas = new List<Personas>();
+            List<Persona> personas = new List<Persona>();
 
             try
             {
@@ -26,7 +26,7 @@ namespace Data.Database
 
                 while (drPersonas.Read())
                 {
-                    Personas per = new Personas();
+                    Persona per = new Persona();
 
                     per.ID = (int)drPersonas["id_persona"];
                     per.Nombre = (string)drPersonas["nombre"];
@@ -36,7 +36,7 @@ namespace Data.Database
                     per.Telefono = (string)drPersonas["telefono"];
                     per.FechaNacimiento= (DateTime)drPersonas["fecha_nac"];
                     per.Legajo = (int)drPersonas["legajo"];
-                    per.TipoPersona = (Personas.TiposPersonas)(int)drPersonas["tipo_persona"];
+                    per.TipoPersona = (Persona.TiposPersonas)(int)drPersonas["tipo_persona"];
                     per.IDPlan = (int)drPersonas["id_plan"];
 
 
@@ -49,6 +49,56 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                     new Exception("Erro al recuperar lista de Personas", Ex);
+
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return personas;
+        }
+
+        public List<Persona> GetAllTipo(Persona.TiposPersonas tipo)
+        {
+            List<Persona> personas = new List<Persona>();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas where tipo_persona = @tipo_persona", sqlConn);
+
+                cmdPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)tipo;
+
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+
+                while (drPersonas.Read())
+                {
+                    Persona per = new Persona();
+
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.Email = (string)drPersonas["email"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.TipoPersona = (Persona.TiposPersonas)(int)drPersonas["tipo_persona"];
+                    per.IDPlan = (int)drPersonas["id_plan"];
+
+
+                    personas.Add(per);
+                }
+
+                drPersonas.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar lista de Personas por Tipo", Ex);
 
                 throw ExcepcionManejada;
             }
@@ -95,9 +145,9 @@ namespace Data.Database
         ////}
 
 
-        public Business.Entities.Personas GetOne(int ID)
+        public Business.Entities.Persona GetOne(int ID)
         {
-            Personas per = new Personas();
+            Persona per = new Persona();
             try
             {
                 this.OpenConnection();
@@ -116,7 +166,7 @@ namespace Data.Database
                     per.Telefono = (string)drPersonas["telefono"];
                     per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
                     per.Legajo = (int)drPersonas["legajo"];
-                    per.TipoPersona = (Personas.TiposPersonas)(int)drPersonas["tipo_persona"];
+                    per.TipoPersona = (Persona.TiposPersonas)(int)drPersonas["tipo_persona"];
                     per.IDPlan = (int)drPersonas["id_plan"];
                 }
                 drPersonas.Close();
@@ -157,7 +207,7 @@ namespace Data.Database
 
         }
 
-        protected void Update(Personas persona)
+        protected void Update(Persona persona)
         {
             try
             {
@@ -192,7 +242,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Personas persona)
+        protected void Insert(Persona persona)
         {
             try
             {
@@ -229,7 +279,7 @@ namespace Data.Database
             }
         }
 
-        public void Save(Personas persona)
+        public void Save(Persona persona)
         {
             if (persona.State == BusinessEntity.States.Deleted)
             {
