@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Academia - Inscripciones" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AlumnosInscripciones.aspx.cs" Inherits="UI.Web.AlumnosInscripciones" %>
+﻿<%@ Page Title="Academia - Cargar Notas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CargarNotas.aspx.cs" Inherits="UI.Web.CargarNotas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" DataKeyNames="ID" AutoGenerateColumns="false" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
@@ -18,10 +18,10 @@
         <asp:TextBox ID="idTextBox" runat="server" ReadOnly="True"></asp:TextBox> 
         <br />
         <asp:Label ID="idAlumnoLabel" runat="server" Text="ID Alumno: "></asp:Label>
-        <asp:DropDownList ID="idAlumnoDropDownList" runat="server"></asp:DropDownList>
+        <asp:TextBox ID="idAlumnoTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
-        <asp:DropDownList ID="idCursoDropDownList" runat="server"></asp:DropDownList>
+        <asp:TextBox ID="idCursoTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
         <asp:TextBox ID="condicionTextBox" runat="server"></asp:TextBox>
@@ -35,8 +35,6 @@
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
-        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-        <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Cargar Nota</asp:LinkButton>
     </asp:Panel>
 </asp:Content>

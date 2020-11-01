@@ -108,6 +108,7 @@
     <Content Include="About.aspx" />
     <Content Include="Alumnos.aspx" />
     <Content Include="AlumnosInscripciones.aspx" />
+    <Content Include="CargarNotas.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -196,6 +197,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CargarNotas.aspx.cs">
+      <DependentUpon>CargarNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargarNotas.aspx.designer.cs">
+      <DependentUpon>CargarNotas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
