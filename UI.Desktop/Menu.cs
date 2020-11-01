@@ -16,5 +16,17 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            Materias materias = new Materias();
+            materias.ShowDialog();
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            Cursos cursos = new Cursos();
+            cursos.ShowDialog();
+        }
     }
 }

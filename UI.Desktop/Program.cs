@@ -15,12 +15,8 @@ namespace UI.Desktop
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Planes());
-            //Application.Run(new Especialidades());
-            //Application.Run(new Usuarios());
-            Application.Run(new Planes());
-            //Application.Run(new UsuarioDesktop());
+            Application.SetCompatibleTextRenderingDefault(false);            
+            Application.Run(new Menu());
 
         }
     }
