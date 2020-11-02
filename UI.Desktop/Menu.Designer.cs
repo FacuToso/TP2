@@ -35,6 +35,7 @@
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
+            this.btnPersonas2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTituloMenu
@@ -104,11 +105,22 @@
             this.btnCursos.UseVisualStyleBackColor = true;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
+            // btnPersonas2
+            // 
+            this.btnPersonas2.Location = new System.Drawing.Point(201, 291);
+            this.btnPersonas2.Name = "btnPersonas2";
+            this.btnPersonas2.Size = new System.Drawing.Size(89, 23);
+            this.btnPersonas2.TabIndex = 9;
+            this.btnPersonas2.Text = "Personas";
+            this.btnPersonas2.UseVisualStyleBackColor = true;
+            this.btnPersonas2.Click += new System.EventHandler(this.btnPersonas2_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 490);
+            this.Controls.Add(this.btnPersonas2);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnMaterias);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnPersonas2;
     }
 }

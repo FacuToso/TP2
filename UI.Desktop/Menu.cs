@@ -28,5 +28,11 @@ namespace UI.Desktop
             Cursos cursos = new Cursos();
             cursos.ShowDialog();
         }
+
+        private void btnPersonas2_Click(object sender, EventArgs e)
+        {
+            Personas personas = new Personas();
+            personas.ShowDialog();
+        }
     }
 }
