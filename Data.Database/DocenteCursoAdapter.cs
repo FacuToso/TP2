@@ -151,8 +151,8 @@ namespace Data.Database
                 this.OpenConnection();
                 //CAPAS QUE HAY ERROR ACA NO ESTA REVISADO
                 SqlCommand cmdSave = new SqlCommand(
-                    "UPDATE docentes_cursos SET id_curso = @id_curso, id_docente = @id_docente, cargo = @cargo" +
-                    "WHERE id_dictado = @id" + sqlConn);
+                    "UPDATE docentes_cursos SET id_curso = @id_curso, id_docente = @id_docente, cargo = @cargo " +
+                    "WHERE id_dictado = @id", sqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = docenteCursos.ID;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docenteCursos.IDCurso;

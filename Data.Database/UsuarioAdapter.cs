@@ -185,6 +185,42 @@ namespace Data.Database
             //return Usuarios.Find(delegate (Usuario u) { return u.ID == ID; });
         }
 
+        public Business.Entities.Usuario GetOneByNombreUsuario(string nombreUsuario)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where nombre_usuario = @nombre_usuario", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                if (drUsuarios.Read())
+                {
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Email = (string)drUsuarios["email"];
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return usr;
+        }
+
         public void Delete(int ID)
         {
             try
@@ -317,6 +353,12 @@ namespace Data.Database
                 Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.ID == usuario.ID; })]=usuario;
             }
             */
+        }
+
+        public ModuloUsuario GetModuloUsuario(string descripcion, int ID)
+        {
+            ModuloUsuarioAdapter moduloUsuarioAdapter = new ModuloUsuarioAdapter();
+            return moduloUsuarioAdapter.GetOneByUsuYDesc(descripcion, ID);
         }
     }
 }

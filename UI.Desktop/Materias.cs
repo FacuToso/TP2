@@ -19,6 +19,17 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+        public Materias(Usuario usuario):this()
+        {
+            UsuarioActual = usuario;
+        }
+
+        private Usuario _usuarioActual;
+        public Usuario UsuarioActual
+        {
+            get { return _usuarioActual; }
+            set { _usuarioActual = value; }
+        }
 
         public void Listar()
         {
@@ -29,7 +40,32 @@ namespace UI.Desktop
 
         private void Materias_Load(object sender, EventArgs e)
         {
-            Listar();
+            try
+            {
+                UsuarioLogic usuarioLogic = new UsuarioLogic();
+                ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Materias", UsuarioActual.ID);
+                if (moduloUsuario != null)
+                {
+                    tsbEditar.Enabled = moduloUsuario.PermiteModificacion;
+                    tsbEliminar.Enabled = moduloUsuario.PermiteBaja;
+                    tsbNuevo.Enabled = moduloUsuario.PermiteAlta;
+                    dgvMaterias.Enabled = moduloUsuario.PermiteConsulta;
+                    btnActualizar.Enabled = moduloUsuario.PermiteConsulta;
+                    Listar();
+                }
+                else
+                {
+                    MessageBox.Show("Academia", "Tu Usuario no tiene los permisos necesarios");
+                }
+            }
+            catch(Exception ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar Modulo", ex);
+
+                throw ExcepcionManejada;
+            }
+            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

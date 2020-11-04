@@ -57,38 +57,45 @@ namespace Data.Database
         }
 
 
-        //public int GetOneByDesc(string descripcion)
+        public ModuloUsuario GetOneByUsuYDesc(string descripcion,int ID)
+        {
+            ModuloUsuario moduloUsuario = new ModuloUsuario();
+            try
+            {
+                this.OpenConnection();
 
-        //{
-        //    int Id;
-        //    try
-        //    {
-        //        this.OpenConnection();
+                SqlCommand cmdModuloUsuario = new SqlCommand("select mu.id_modulo_usuario, mu.id_modulo, mu.id_usuario, mu.alta, mu.baja, mu.consulta, modificacion from usuarios usu inner join modulos_usuarios mu on usu.id_usuario = mu.id_usuario inner join modulos mo on mu.id_modulo = mo.id_modulo where usu.id_usuario = @id and mo.desc_modulo = @descripcion", sqlConn);
+                cmdModuloUsuario.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = descripcion;
+                cmdModuloUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drModuloUsuarios = cmdModuloUsuario.ExecuteReader();
 
-        //        SqlCommand cmdMateria = new SqlCommand("select id_materia from MATERIAS where desc_materia = @descripcion ", sqlConn);
-        //        cmdMateria.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = descripcion;
+                if (drModuloUsuarios.Read())
+                {
+                    moduloUsuario.ID = (int)drModuloUsuarios["id_modulo_usuario"];
+                    moduloUsuario.IDModulo = (int)drModuloUsuarios["id_modulo"];
+                    moduloUsuario.IDUsuario = (int)drModuloUsuarios["id_usuario"];
+                    moduloUsuario.PermiteAlta = (bool)drModuloUsuarios["alta"];
+                    moduloUsuario.PermiteBaja = (bool)drModuloUsuarios["baja"];
+                    moduloUsuario.PermiteConsulta = (bool)drModuloUsuarios["consulta"];
+                    moduloUsuario.PermiteModificacion = (bool)drModuloUsuarios["modificacion"];
+                }
+                drModuloUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar lista de Modulos de Usuario", Ex);
 
-        //        Id = Convert.ToInt32(cmdMateria.ExecuteScalar());
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
 
+            return moduloUsuario;
 
-
-
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        Exception ExcepcionManejada =
-        //            new Exception("Erro al recuperar lista de Materias", Ex);
-
-        //        throw ExcepcionManejada;
-        //    }
-        //    finally
-        //    {
-        //        this.CloseConnection();
-        //    }
-
-        //    return Id;
-
-        //}
+        }
 
 
         public Business.Entities.ModuloUsuario GetOne(int ID)

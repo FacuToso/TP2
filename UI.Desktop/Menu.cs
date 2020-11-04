@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,22 +18,47 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
+        public Menu(Usuario usuario):this()
+        {
+            UsuarioActual = usuario;
+        }
+
+        private Usuario _usuarioActual;
+
+        public Usuario UsuarioActual
+        {
+            get { return _usuarioActual; }
+            set { _usuarioActual = value; }
+        }
+
         private void btnMaterias_Click(object sender, EventArgs e)
         {
-            Materias materias = new Materias();
+            Materias materias = new Materias(UsuarioActual);
             materias.ShowDialog();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-            Cursos cursos = new Cursos();
-            cursos.ShowDialog();
+            //Cursos cursos = new Cursos(UsuarioActual);
+            //cursos.ShowDialog();
         }
 
         private void btnPersonas2_Click(object sender, EventArgs e)
         {
-            Personas personas = new Personas();
-            personas.ShowDialog();
+            //Personas personas = new Personas(UsuarioActual);
+            //personas.ShowDialog();
+        }
+
+        private void btnInscripciones_Click(object sender, EventArgs e)
+        {
+            //Inscripciones inscripciones = new Inscripciones(UsuarioActual);
+            //inscripciones.ShowDialog();
+        }
+
+        private void btnDictados_Click(object sender, EventArgs e)
+        {
+            //Dictados dictados = new Dictados(UsuarioActual);
+            //dictados.ShowDialog();
         }
     }
 }

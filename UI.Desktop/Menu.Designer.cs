@@ -36,6 +36,8 @@
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
             this.btnPersonas2 = new System.Windows.Forms.Button();
+            this.btnInscripciones = new System.Windows.Forms.Button();
+            this.btnDictados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTituloMenu
@@ -115,11 +117,33 @@
             this.btnPersonas2.UseVisualStyleBackColor = true;
             this.btnPersonas2.Click += new System.EventHandler(this.btnPersonas2_Click);
             // 
+            // btnInscripciones
+            // 
+            this.btnInscripciones.Location = new System.Drawing.Point(201, 333);
+            this.btnInscripciones.Name = "btnInscripciones";
+            this.btnInscripciones.Size = new System.Drawing.Size(89, 23);
+            this.btnInscripciones.TabIndex = 10;
+            this.btnInscripciones.Text = "Inscripciones";
+            this.btnInscripciones.UseVisualStyleBackColor = true;
+            this.btnInscripciones.Click += new System.EventHandler(this.btnInscripciones_Click);
+            // 
+            // btnDictados
+            // 
+            this.btnDictados.Location = new System.Drawing.Point(201, 371);
+            this.btnDictados.Name = "btnDictados";
+            this.btnDictados.Size = new System.Drawing.Size(89, 23);
+            this.btnDictados.TabIndex = 11;
+            this.btnDictados.Text = "Dictados";
+            this.btnDictados.UseVisualStyleBackColor = true;
+            this.btnDictados.Click += new System.EventHandler(this.btnDictados_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 490);
+            this.Controls.Add(this.btnDictados);
+            this.Controls.Add(this.btnInscripciones);
             this.Controls.Add(this.btnPersonas2);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnComisiones);
@@ -145,5 +169,7 @@
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.Button btnPersonas2;
+        private System.Windows.Forms.Button btnInscripciones;
+        private System.Windows.Forms.Button btnDictados;
     }
 }
