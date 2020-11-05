@@ -57,7 +57,9 @@
         <asp:LinkButton ID="lnkRecordarClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
                 </td>
                 <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblMensaje" runat="server" EnableTheming="True" ForeColor="#FF3300" Text="Label"></asp:Label>
+                </td>
             </tr>
         </table>
     </form>

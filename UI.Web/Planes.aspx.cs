@@ -132,7 +132,39 @@ namespace UI.Web
                 foreach (var es in esp)
                 {
                     idEspecialidadDropDownList.Items.Add(es.ID.ToString());
-                }  
+                }
+
+                Usuario usuario = (Usuario)Session["UsuarioActual"];
+                UsuarioLogic usuarioLogic = new UsuarioLogic();
+                try
+                {
+
+                    ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Personas", usuario.ID);
+                    if (moduloUsuario.IDModulo != 0)
+                    {
+                        editarLinkButton.Enabled = moduloUsuario.PermiteModificacion;
+                        eliminarLinkButton.Enabled = moduloUsuario.PermiteBaja;
+                        nuevoLinkButton.Enabled = moduloUsuario.PermiteAlta;
+                        gridView.Enabled = moduloUsuario.PermiteConsulta;
+                        if (moduloUsuario.PermiteConsulta)
+                        {
+                            LoadGrid();
+                        }
+                    }
+                    else
+                    {
+                        gridPanel.Visible = false;
+                        formPanel.Visible = false;
+                        gridActionsPanel.Visible = false;
+                        Page.Response.Write("Usuario sin permisos");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Exception ExcepcionManejada = new Exception("Error al recuperar Modulo", ex);
+
+                    throw ExcepcionManejada;
+                }
             }
         }
 
