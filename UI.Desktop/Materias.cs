@@ -15,6 +15,7 @@ namespace UI.Desktop
 {
     public partial class Materias : Form
     {
+        #region Constructores
         public Materias()
         {
             InitializeComponent();
@@ -24,12 +25,18 @@ namespace UI.Desktop
             UsuarioActual = usuario;
         }
 
+        #endregion
+
+        #region Propiedades
+
         private Usuario _usuarioActual;
         public Usuario UsuarioActual
         {
             get { return _usuarioActual; }
             set { _usuarioActual = value; }
         }
+
+        #endregion
 
         public void Listar()
         {
@@ -44,18 +51,22 @@ namespace UI.Desktop
             {
                 UsuarioLogic usuarioLogic = new UsuarioLogic();
                 ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Materias", UsuarioActual.ID);
-                if (moduloUsuario != null)
+                if (moduloUsuario.IDUsuario != 0)
                 {
                     tsbEditar.Enabled = moduloUsuario.PermiteModificacion;
                     tsbEliminar.Enabled = moduloUsuario.PermiteBaja;
                     tsbNuevo.Enabled = moduloUsuario.PermiteAlta;
                     dgvMaterias.Enabled = moduloUsuario.PermiteConsulta;
                     btnActualizar.Enabled = moduloUsuario.PermiteConsulta;
-                    Listar();
+                    if (moduloUsuario.PermiteConsulta)
+                    {
+                        Listar();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Academia", "Tu Usuario no tiene los permisos necesarios");
+                    MessageBox.Show("Tu Usuario no tiene los permisos necesarios", "Academia");
+                    Close();
                 }
             }
             catch(Exception ex)
@@ -64,8 +75,7 @@ namespace UI.Desktop
                     new Exception("Erro al recuperar Modulo", ex);
 
                 throw ExcepcionManejada;
-            }
-            
+            }            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

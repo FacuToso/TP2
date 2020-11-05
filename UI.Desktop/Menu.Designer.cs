@@ -59,6 +59,7 @@
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnPersonas
             // 
@@ -68,6 +69,7 @@
             this.btnPersonas.TabIndex = 4;
             this.btnPersonas.Text = "Especialidades";
             this.btnPersonas.UseVisualStyleBackColor = true;
+            this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
             // 
             // btnPlanes
             // 
@@ -77,6 +79,7 @@
             this.btnPlanes.TabIndex = 5;
             this.btnPlanes.Text = "Planes";
             this.btnPlanes.UseVisualStyleBackColor = true;
+            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
             // btnMaterias
             // 
@@ -96,6 +99,7 @@
             this.btnComisiones.TabIndex = 7;
             this.btnComisiones.Text = "Comisiones";
             this.btnComisiones.UseVisualStyleBackColor = true;
+            this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
             // 
             // btnCursos
             // 
