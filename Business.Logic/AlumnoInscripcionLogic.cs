@@ -44,6 +44,12 @@ namespace Business.Logic
         {
             InscripcionData.Save(inscripcion);
         }
+        /// Metodo que valida que el alumno no este inscripto en ese curso
+
+        public bool validarInscripcion(AlumnoInscripcion InscripAlumno)
+        {
+            return InscripcionData.GetOne(InscripAlumno);
+        }
     }
 }
 

@@ -135,7 +135,7 @@ namespace UI.Web
                     idCursoDropDownList.Items.Add(cr.ID.ToString());
                 }
                 PersonasLogic personasLogic = new PersonasLogic();
-                List<Business.Entities.Persona> docentes = personasLogic.GetAllTipo(Persona.TiposPersonas.Profesor);
+                List<Persona> docentes = personasLogic.GetAllTipo(Persona.TiposPersonas.Profesor);
                 foreach (var dc in docentes)
                 {
                     idDocenteDropDownList.Items.Add(dc.ID.ToString());

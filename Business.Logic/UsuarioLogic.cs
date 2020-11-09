@@ -57,5 +57,18 @@ namespace Business.Logic
         {
             return UsuarioData.GetModuloUsuario(descripcion, ID);
         }
+
+        public bool verificoLogin(string nombUsu, string claveUsu)
+        {
+            //Si se encontro un usuario, va atener un nombre distinto del nulo, no pense en otra forma de como verificar
+            if (UsuarioData.GetOne(nombUsu, claveUsu).NombreUsuario != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -52,10 +52,12 @@ namespace Business.Entities
         public int IDComision
         {
             get { return Comision.ID; }
+            
         }
         public string DescComision
         {
             get { return Comision.Descripcion; }
+            
         }
 
         public Materia Materia
@@ -67,11 +69,13 @@ namespace Business.Entities
         public int IDMateria
         {
             get { return Materia.ID; }
+            
         }
 
         public string DescMateria
         {
             get { return Materia.Descripcion; }
+            
         }
 
         #endregion

@@ -77,7 +77,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAllTipo(Persona.TiposPersonas.Alumno);
+            this.gridView.DataSource = Logic.GetAllTipo(Persona.TiposPersonas.Alumno);
             this.gridView.DataBind();
         }
 

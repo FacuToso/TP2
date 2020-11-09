@@ -46,11 +46,13 @@ namespace Business.Entities
         public int IDAlumno
         {
             get { return Alumno.ID; }
+            
         }
 
         public string NombreAlumno
         {
             get { return Alumno.Nombre; }
+            
         }
 
         public string ApellidoAlumno
@@ -69,6 +71,7 @@ namespace Business.Entities
         public int IDCurso
         {
             get { return Curso.ID; }
+            
         }
 
         public string DescMateria

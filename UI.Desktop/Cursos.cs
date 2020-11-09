@@ -47,6 +47,7 @@ namespace UI.Desktop
         private void Cursos_Load(object sender, EventArgs e)
         {
             try
+                
             {
                 UsuarioLogic usuarioLogic = new UsuarioLogic();
                 ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Cursos", UsuarioActual.ID);

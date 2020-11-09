@@ -49,11 +49,13 @@ namespace Business.Entities
         public int IDPlan
         {
             get { return Plan.ID; }
+            
         }
 
         public string DescPlan
         {
             get { return Plan.Descripcion; }
+           
         }
         #endregion
 

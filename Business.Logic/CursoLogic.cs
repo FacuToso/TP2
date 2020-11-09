@@ -42,7 +42,7 @@ namespace Business.Logic
 
         public void Update(Business.Entities.Curso curso)
         {
-            CursoData.
+            CursoData.ModificarCupoCurso(curso);
         }
     }
 
