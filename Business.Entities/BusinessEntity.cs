@@ -8,11 +8,16 @@ namespace Business.Entities
 {
     public class BusinessEntity
     {
+
+        #region Constructores
         public BusinessEntity()
         {
             this.State = States.New;
         }
 
+        #endregion
+
+        #region Propiedades
         private int _ID;
         public int ID
         {
@@ -26,7 +31,9 @@ namespace Business.Entities
             get { return _State; }
             set { _State = value; }
         }
+        #endregion
 
+        #region States
         public enum States
         {
             Deleted,
@@ -34,6 +41,6 @@ namespace Business.Entities
             Modified,
             Unmodified
         }
-
+        #endregion
     }
 }

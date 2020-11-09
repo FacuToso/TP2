@@ -8,20 +8,41 @@ namespace Business.Entities
 {
     public class Plan:BusinessEntity
     {
+        #region Atributos
+        private string _Descripcion;
+        private Especialidad _Especialidad;
+        #endregion
+
+        #region Constructores
+        public Plan()
+        {
+            Especialidad = new Especialidad();
+        }
+        #endregion
+
         #region Propiedades
 
-        private string _Descripcion;
         public string Descripcion
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
 
-        private int _IDEspecialidad;
+        // Especialidad
+        public Especialidad Especialidad
+        {
+            get { return _Especialidad; }
+            set { _Especialidad = value; }
+        }
+        
         public int IDEspecialidad
         {
-            get { return _IDEspecialidad; }
-            set { _IDEspecialidad = value; }
+            get { return Especialidad.ID; }
+        }
+
+        public string DescEspecialidad
+        {
+            get { return Especialidad.Descripcion; }
         }
 
         #endregion

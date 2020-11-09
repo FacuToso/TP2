@@ -26,12 +26,22 @@ namespace Data.Database
 
             // ESTO ESTA MAL PERO FUNCIONA
             // PASO 10 11 12 LAB 05
-            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = tp2_net; Integrated Security = true");
-            sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
+            // SUPONGO QUE SE HACIA CON APP.CONFIG  COMO LO HICIMOS
 
+            #region Hardcore ConnString
+            // HARDCODEADO PARA TESTING
+
+            // Santi - Lau
+            sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = tp2_net; Integrated Security = true");
+
+            // Facu
+            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
+            #endregion
+
+            // Por App.config
+            sqlConn = new SqlConnection(Conn);   
+            
             sqlConn.Open();
-
-
 
             //throw new Exception("Metodo no implementado");
         }

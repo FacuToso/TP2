@@ -8,9 +8,6 @@ namespace Business.Logic
 {
     public class BusinessLogic
     {
-
-
-
-
+        // No cuenta con logica propia
     }
 }

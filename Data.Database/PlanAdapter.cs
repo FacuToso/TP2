@@ -27,11 +27,11 @@ namespace Data.Database
 
                     pln.ID = (int)drPlanes["id_plan"];
                     pln.Descripcion = (string)drPlanes["desc_plan"];
-                    pln.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    pln.Especialidad = new EspecialidadAdapter().GetOne((int)drPlanes["id_especialidad"]);
 
+                    //pln.IDEspecialidad = (int)drPlanes["id_especialidad"];
                     planes.Add(pln);
                 }
-
                 drPlanes.Close();
             }
             catch (Exception Ex)
@@ -45,7 +45,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-
             return planes;
         }
 
@@ -56,8 +55,6 @@ namespace Data.Database
             Plan pln = new Plan();
             try
             {
-
-
                 this.OpenConnection();
 
                 SqlCommand cmdPlanes = new SqlCommand("select * from planes where id_plan = @id", sqlConn);
@@ -68,7 +65,9 @@ namespace Data.Database
                 {
                     pln.ID = (int)drPlanes["id_plan"];
                     pln.Descripcion = (string)drPlanes["desc_plan"];
-                    pln.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    pln.Especialidad = new EspecialidadAdapter().GetOne((int)drPlanes["id_especialidad"]);
+                    // Arreglado arriba
+                    //pln.IDEspecialidad = (int)drPlanes["id_especialidad"];
                 }
                 drPlanes.Close();
             }
@@ -81,9 +80,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-
             return pln;
-
         }
 
         public int GetOneByDesc(string descripcion)
@@ -190,8 +187,9 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
 
-                plan.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                //plan.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //Asi se obtiene el id desde la base de datos
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {

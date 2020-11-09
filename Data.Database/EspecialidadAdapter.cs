@@ -64,14 +64,11 @@ namespace Data.Database
 
                 Id = Convert.ToInt32(cmdEspecialidad.ExecuteScalar());
 
-
-
-
             }
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                    new Exception("Erro al recuperar lista de Planes", Ex);
+                    new Exception("Error al recuperar datos de la Especialidad", Ex);
 
                 throw ExcepcionManejada;
             }
@@ -104,7 +101,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar datos de especialidades", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de la Especialidad", Ex);
                 throw ExcepcionManejada;
             }
             finally
