@@ -46,6 +46,7 @@ namespace Business.Entities
         public int IDAlumno
         {
             get { return Alumno.ID; }
+            set { Alumno.ID = value; }
             
         }
 
@@ -71,6 +72,7 @@ namespace Business.Entities
         public int IDCurso
         {
             get { return Curso.ID; }
+            set { Curso.ID = value; }
             
         }
 

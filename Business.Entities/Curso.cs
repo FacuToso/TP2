@@ -52,6 +52,7 @@ namespace Business.Entities
         public int IDComision
         {
             get { return Comision.ID; }
+            set { Comision.ID = value; }
             
         }
         public string DescComision
@@ -69,6 +70,7 @@ namespace Business.Entities
         public int IDMateria
         {
             get { return Materia.ID; }
+            set { Materia.ID = value; }
             
         }
 

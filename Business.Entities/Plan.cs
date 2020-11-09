@@ -38,6 +38,7 @@ namespace Business.Entities
         public int IDEspecialidad
         {
             get { return Especialidad.ID; }
+            set { Especialidad.ID = value; }
         }
 
         public string DescEspecialidad

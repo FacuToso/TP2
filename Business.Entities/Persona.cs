@@ -95,6 +95,7 @@ namespace Business.Entities
         public int IDPlan
         {
             get { return Plan.ID; }
+            set { Plan.ID = value; }
         }
 
         public static List<TiposPersonas> GetAllTipos()

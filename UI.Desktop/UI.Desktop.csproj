@@ -50,192 +50,192 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationForm.cs">
+    <Compile Include="FormsDeEntidades\ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForm.Designer.cs">
+    <Compile Include="FormsDeEntidades\ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComisionDesktop.cs">
+    <Compile Include="FormsDeEntidades\Comisiones\ComisionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComisionDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Comisiones\ComisionDesktop.Designer.cs">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Comisiones.cs">
+    <Compile Include="FormsDeEntidades\Comisiones\Comisiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comisiones.Designer.cs">
+    <Compile Include="FormsDeEntidades\Comisiones\Comisiones.Designer.cs">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos.cs">
+    <Compile Include="FormsDeEntidades\Cursos\Cursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos.Designer.cs">
+    <Compile Include="FormsDeEntidades\Cursos\Cursos.Designer.cs">
       <DependentUpon>Cursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CursosDesktop.cs">
+    <Compile Include="FormsDeEntidades\Cursos\CursosDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CursosDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Cursos\CursosDesktop.Designer.cs">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dictados.cs">
+    <Compile Include="FormsDeEntidades\Dictados\Dictados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dictados.Designer.cs">
+    <Compile Include="FormsDeEntidades\Dictados\Dictados.Designer.cs">
       <DependentUpon>Dictados.cs</DependentUpon>
     </Compile>
-    <Compile Include="DictadosDesktop.cs">
+    <Compile Include="FormsDeEntidades\Dictados\DictadosDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DictadosDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Dictados\DictadosDesktop.Designer.cs">
       <DependentUpon>DictadosDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Especialidades.cs">
+    <Compile Include="FormsDeEntidades\Especialidades\Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Especialidades.Designer.cs">
+    <Compile Include="FormsDeEntidades\Especialidades\Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="EspecialidadDesktop.cs">
+    <Compile Include="FormsDeEntidades\Especialidades\EspecialidadDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EspecialidadDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Especialidades\EspecialidadDesktop.Designer.cs">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inscripciones.cs">
+    <Compile Include="FormsDeEntidades\Inscripciones\Inscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inscripciones.Designer.cs">
+    <Compile Include="FormsDeEntidades\Inscripciones\Inscripciones.Designer.cs">
       <DependentUpon>Inscripciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="InscripcionesDesktop.cs">
+    <Compile Include="FormsDeEntidades\Inscripciones\InscripcionesDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InscripcionesDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Inscripciones\InscripcionesDesktop.Designer.cs">
       <DependentUpon>InscripcionesDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FormsPrincipales\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="FormsPrincipales\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MateriaDesktop.cs">
+    <Compile Include="FormsDeEntidades\Materias\MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MateriaDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Materias\MateriaDesktop.Designer.cs">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materias.cs">
+    <Compile Include="FormsDeEntidades\Materias\Materias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materias.Designer.cs">
+    <Compile Include="FormsDeEntidades\Materias\Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="FormsPrincipales\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="FormsPrincipales\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonaDesktop.cs">
+    <Compile Include="FormsDeEntidades\Personas\PersonaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Personas\PersonaDesktop.Designer.cs">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personas.cs">
+    <Compile Include="FormsDeEntidades\Personas\Personas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personas.Designer.cs">
+    <Compile Include="FormsDeEntidades\Personas\Personas.Designer.cs">
       <DependentUpon>Personas.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlanDesktop.cs">
+    <Compile Include="FormsDeEntidades\Planes\PlanDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlanDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Planes\PlanDesktop.Designer.cs">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planes.cs">
+    <Compile Include="FormsDeEntidades\Planes\Planes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planes.Designer.cs">
+    <Compile Include="FormsDeEntidades\Planes\Planes.Designer.cs">
       <DependentUpon>Planes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioDesktop.cs">
+    <Compile Include="FormsDeEntidades\Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuarioDesktop.Designer.cs">
+    <Compile Include="FormsDeEntidades\Usuario\UsuarioDesktop.Designer.cs">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.cs">
+    <Compile Include="FormsDeEntidades\Usuario\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.cs">
+    <Compile Include="FormsDeEntidades\Usuario\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ComisionDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Comisiones\ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comisiones.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Comisiones\Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Cursos\Cursos.resx">
       <DependentUpon>Cursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CursosDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Cursos\CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dictados.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Dictados\Dictados.resx">
       <DependentUpon>Dictados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DictadosDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Dictados\DictadosDesktop.resx">
       <DependentUpon>DictadosDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Especialidades.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Especialidades\Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EspecialidadDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Especialidades\EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inscripciones.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Inscripciones\Inscripciones.resx">
       <DependentUpon>Inscripciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InscripcionesDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Inscripciones\InscripcionesDesktop.resx">
       <DependentUpon>InscripcionesDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="FormsPrincipales\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MateriaDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Materias\MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materias.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Materias\Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="FormsPrincipales\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonaDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Personas\PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personas.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Personas\Personas.resx">
       <DependentUpon>Personas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlanDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Planes\PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planes.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Planes\Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioDesktop.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
+    <EmbeddedResource Include="FormsDeEntidades\Usuario\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -273,5 +273,6 @@
   <ItemGroup>
     <Content Include="DLLs\ComponentFactory.Krypton.Toolkit.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
