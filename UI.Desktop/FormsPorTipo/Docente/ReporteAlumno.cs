@@ -27,6 +27,8 @@ namespace UI.Desktop.FormsPorTipo.Docente
 
         private void ReporteAlumno_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'academiaDataSet.alumnos_inscripciones' Puede moverla o quitarla según sea necesario.
+            this.alumnos_inscripcionesTableAdapter.Fill(this.academiaDataSet.alumnos_inscripciones);
             RvInscripciones.LocalReport.ReportPath = @"C:\Users\Facu\Desktop\TP2 - master\UI.Desktop\FormsPorTipo\Docente\ReporteAlumnos.rdlc";
             RvInscripciones.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
 

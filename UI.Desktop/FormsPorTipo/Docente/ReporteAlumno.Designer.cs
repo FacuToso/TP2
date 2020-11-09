@@ -32,7 +32,10 @@
             this.components = new System.ComponentModel.Container();
             this.RvInscripciones = new Microsoft.Reporting.WinForms.ReportViewer();
             this.InscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.academiaDataSet = new UI.Desktop.academiaDataSet();
+            this.alumnos_inscripcionesTableAdapter = new UI.Desktop.academiaDataSetTableAdapters.alumnos_inscripcionesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.academiaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // RvInscripciones
@@ -47,7 +50,17 @@
             // 
             // InscripcionBindingSource
             // 
-            this.InscripcionBindingSource.DataSource = typeof(Business.Entities.AlumnoInscripcion);
+            this.InscripcionBindingSource.DataMember = "alumnos_inscripciones";
+            this.InscripcionBindingSource.DataSource = this.academiaDataSet;
+            // 
+            // academiaDataSet
+            // 
+            this.academiaDataSet.DataSetName = "academiaDataSet";
+            this.academiaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // alumnos_inscripcionesTableAdapter
+            // 
+            this.alumnos_inscripcionesTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteAlumno
             // 
@@ -59,6 +72,7 @@
             this.Text = "ReporteAlumno";
             this.Load += new System.EventHandler(this.ReporteAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.academiaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -66,5 +80,7 @@
         #endregion
         private Microsoft.Reporting.WinForms.ReportViewer RvInscripciones;
         private System.Windows.Forms.BindingSource InscripcionBindingSource;
+        private academiaDataSet academiaDataSet;
+        private academiaDataSetTableAdapters.alumnos_inscripcionesTableAdapter alumnos_inscripcionesTableAdapter;
     }
 }
