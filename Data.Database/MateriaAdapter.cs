@@ -31,7 +31,9 @@ namespace Data.Database
                     mat.Descripcion = (string)drMaterias["desc_materia"];
                     mat.HSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
-                    mat.IDPlan = (int)drMaterias["id_plan"];
+                    mat.Plan = new PlanAdapter().GetOne((int)drMaterias["id_plan"]);
+                    // Arreglado arriba
+                    //mat.IDPlan = (int)drMaterias["id_plan"];
 
                     materias.Add(mat);
                 }
@@ -105,7 +107,9 @@ namespace Data.Database
                     mat.Descripcion = (string)drMaterias["desc_materia"];
                     mat.HSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
-                    mat.IDPlan = (int)drMaterias["id_plan"];
+                    mat.Plan.ID = (int)drMaterias["id_plan"];
+                    //Corregido arriba
+                    //mat.IDPlan = (int)drMaterias["id_plan"];
                 }
                 drMaterias.Close();
             }

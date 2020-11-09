@@ -6,46 +6,73 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Curso : BusinessEntity
+   public class Curso : BusinessEntity
 
     {
-        #region Propiedades
+
+        #region Atributos
 
         private int _AnioCalendario;
+        private int _Cupo;
+        private Comision _Comision;
+        private Materia _Materia;
+
+        #endregion
+
+        #region Constructores
+        public Curso()
+        {
+            Comision = new Comision();
+            Materia = new Materia();
+        }
+        #endregion
+
+        #region Propiedades
+
+        // Curso
         public int AnioCalendario
         {
             get { return _AnioCalendario; }
             set { _AnioCalendario = value; }
         }
 
-        private int _Cupo;
         public int Cupo
         {
             get { return _Cupo; }
             set { _Cupo = value; }
         }
 
-        private string _Descripcion;
-        public string Descripcion
+        // Comision
+        public Comision Comision
         {
-            get { return _Descripcion; }
-            set { _Descripcion = value; }
+            get { return _Comision; }
+            set { _Comision = value; }
         }
 
-        private int _IDComision;
         public int IDComision
         {
-            get { return _IDComision; }
-            set { _IDComision = value; }
+            get { return Comision.ID; }
+        }
+        public string DescComision
+        {
+            get { return Comision.Descripcion; }
         }
 
-        private int _IDMateria;
+        public Materia Materia
+        {
+            get { return _Materia; }
+            set { _Materia = value; }
+        }
+
         public int IDMateria
         {
-            get { return _IDMateria; }
-            set { _IDMateria = value; }
+            get { return Materia.ID; }
         }
 
+        public string DescMateria
+        {
+            get { return Materia.Descripcion; }
+        }
 
         #endregion
     }

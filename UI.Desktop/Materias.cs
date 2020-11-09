@@ -15,10 +15,28 @@ namespace UI.Desktop
 {
     public partial class Materias : Form
     {
+        #region Constructores
         public Materias()
         {
             InitializeComponent();
         }
+        public Materias(Usuario usuario):this()
+        {
+            UsuarioActual = usuario;
+        }
+
+        #endregion
+
+        #region Propiedades
+
+        private Usuario _usuarioActual;
+        public Usuario UsuarioActual
+        {
+            get { return _usuarioActual; }
+            set { _usuarioActual = value; }
+        }
+
+        #endregion
 
         public void Listar()
         {
@@ -29,7 +47,35 @@ namespace UI.Desktop
 
         private void Materias_Load(object sender, EventArgs e)
         {
-            Listar();
+            try
+            {
+                UsuarioLogic usuarioLogic = new UsuarioLogic();
+                ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Materias", UsuarioActual.ID);
+                if (moduloUsuario.IDUsuario != 0)
+                {
+                    tsbEditar.Enabled = moduloUsuario.PermiteModificacion;
+                    tsbEliminar.Enabled = moduloUsuario.PermiteBaja;
+                    tsbNuevo.Enabled = moduloUsuario.PermiteAlta;
+                    dgvMaterias.Enabled = moduloUsuario.PermiteConsulta;
+                    btnActualizar.Enabled = moduloUsuario.PermiteConsulta;
+                    if (moduloUsuario.PermiteConsulta)
+                    {
+                        Listar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tu Usuario no tiene los permisos necesarios", "Academia");
+                    Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Erro al recuperar Modulo", ex);
+
+                throw ExcepcionManejada;
+            }            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

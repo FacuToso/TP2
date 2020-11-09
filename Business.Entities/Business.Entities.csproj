@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="BusinessEntity.cs" />
     <Compile Include="AlumnoInscripcion.cs" />
-    <Compile Include="Personas.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="Materia.cs" />
     <Compile Include="Curso.cs" />

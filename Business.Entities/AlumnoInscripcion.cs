@@ -6,38 +6,80 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class AlumnoInscripcion : BusinessEntity
+   public class AlumnoInscripcion : BusinessEntity
     {
-        #region Propiedades
-
+        #region Atributos
+        private int _Nota;
+        private Persona _Alumno;
+        private Curso _Curso;
         private string _Condicion;
+        #endregion
+
+        #region Constructores
+        public AlumnoInscripcion()
+        {
+            Alumno = new Persona();
+            Curso = new Curso();
+        }
+        #endregion
+
+        #region Propiedades
+        // AlumnoInscripcion
         public string Condicion
         {
             get { return _Condicion; }
             set { _Condicion = value; }
         }
 
-        private int _IDAlumno;
-        public int IDAlumno
-        {
-            get { return _IDAlumno; }
-            set { _IDAlumno = value; }
-        }
-
-        private int _IDCurso;
-        public int IDCurso
-        {
-            get { return _IDCurso; }
-            set { _IDCurso = value; }
-        }
-
-        private int _Nota;
         public int Nota
         {
             get { return _Nota; }
             set { _Nota = value; }
         }
 
+        public Persona Alumno
+        {
+            get { return _Alumno; }
+            set { _Alumno = value; }
+        }
+
+        public int IDAlumno
+        {
+            get { return Alumno.ID; }
+        }
+
+        public string NombreAlumno
+        {
+            get { return Alumno.Nombre; }
+        }
+
+        public string ApellidoAlumno
+        {
+            get { return Alumno.Apellido; }
+        }
+
+        // Curso
+
+        public Curso Curso
+        {
+            get { return _Curso; }
+            set { _Curso = value; }
+        }
+
+        public int IDCurso
+        {
+            get { return Curso.ID; }
+        }
+
+        public string DescMateria
+        {
+            get { return Curso.DescMateria; }
+        }
+
+        public string DescComision
+        {
+            get { return Curso.DescComision; }
+        }
 
         #endregion
     }
