@@ -25,6 +25,28 @@ namespace Business.Logic
             return InscripcionData.GetAll();
         }
 
+        public List<AlumnoInscripcion> GetAll(Usuario usuario)
+        {
+            try
+            {   //Se devuelven las inscripciones dependiendo el tipo persona
+                switch (usuario.Persona.TipoPersona)
+                {
+                    case Persona.TiposPersonas.Alumno:
+                        return InscripcionData.GetInscripcionesAlumno(usuario);
+
+                    case Persona.TiposPersonas.Docente:
+                        return InscripcionData.GetInscripcionesDocente(usuario);
+
+                    default: return null;
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+        }
+
         //public int GetOneByDesc(string descripcion)
         //{
         //    return InscripcionData.GetOneByDesc(descripcion);

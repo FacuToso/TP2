@@ -206,12 +206,12 @@ namespace Data.Database
                     usr.ID = (int)drUsuarios["id_usuario"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    /* Creo que no va
-                    usr.Clave = (string)drUsuarios["clave"];
+                     //Creo que no va
+                    /*usr.Clave = (string)drUsuarios["clave"];
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.Email = (string)drUsuarios["email"];
-                    */
+                    usr.Email = (string)drUsuarios["email"];*/
+                    
                     usr.Persona = new PersonasAdapter().GetOne((int)drUsuarios["id_persona"]);
                 }
                 drUsuarios.Close();

@@ -164,7 +164,7 @@ namespace UI.Desktop
             }
 
             PersonasLogic personasLogic = new PersonasLogic();
-            List<Persona> docentes = personasLogic.GetAllTipo(Persona.TiposPersonas.Profesor);
+            List<Persona> docentes = personasLogic.GetAllTipo(Persona.TiposPersonas.Docente);
             foreach(var dc in docentes)
             {
                 cbxIdDocente.Items.Add(dc.ID.ToString());

@@ -77,7 +77,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = Logic.GetAllTipo(Persona.TiposPersonas.Profesor);
+            this.gridView.DataSource = Logic.GetAllTipo(Persona.TiposPersonas.Docente);
             this.gridView.DataBind();
         }
 
@@ -105,7 +105,7 @@ namespace UI.Web
             persona.FechaNacimiento = Convert.ToDateTime(fechaNacimientoTextBox.Text);
             persona.IDPlan = Convert.ToInt32(idPlanDropDownList.Text);
             persona.Legajo = Convert.ToInt32(legajoTextBox.Text);
-            persona.TipoPersona = Persona.TiposPersonas.Profesor;
+            persona.TipoPersona = Persona.TiposPersonas.Docente;
             persona.Telefono = telefonoTextBox.Text;
         }
 

@@ -75,7 +75,7 @@ namespace Business.Entities
         public enum TiposPersonas
         {
             Admin,
-            Profesor,
+            Docente,
             Alumno
         }
 
@@ -103,7 +103,7 @@ namespace Business.Entities
             List<TiposPersonas> tiposPersonas = new List<TiposPersonas>();
             tiposPersonas.Add(TiposPersonas.Admin);
             tiposPersonas.Add(TiposPersonas.Alumno);
-            tiposPersonas.Add(TiposPersonas.Admin);
+            tiposPersonas.Add(TiposPersonas.Docente);
             return tiposPersonas;
         }
 

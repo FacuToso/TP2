@@ -37,8 +37,27 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +69,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="academiaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>academiaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormsDeEntidades\ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +140,48 @@
     <Compile Include="FormsDeEntidades\Inscripciones\InscripcionesDesktop.Designer.cs">
       <DependentUpon>InscripcionesDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsPorTipo\Admin\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Admin\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Alumno\FormAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Alumno\FormAlumno.Designer.cs">
+      <DependentUpon>FormAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Alumno\InscripcionAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Alumno\InscripcionAlumno.Designer.cs">
+      <DependentUpon>InscripcionAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormCursosDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormCursosDocente.Designer.cs">
+      <DependentUpon>FormCursosDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormDocente.Designer.cs">
+      <DependentUpon>FormDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormIngresoNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\FormIngresoNota.Designer.cs">
+      <DependentUpon>FormIngresoNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\ReporteAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPorTipo\Docente\ReporteAlumno.Designer.cs">
+      <DependentUpon>ReporteAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsPrincipales\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +244,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormsDeEntidades\Comisiones\ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +275,28 @@
     <EmbeddedResource Include="FormsDeEntidades\Inscripciones\InscripcionesDesktop.resx">
       <DependentUpon>InscripcionesDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Admin\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Alumno\FormAlumno.resx">
+      <DependentUpon>FormAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Alumno\InscripcionAlumno.resx">
+      <DependentUpon>InscripcionAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Docente\FormCursosDocente.resx">
+      <DependentUpon>FormCursosDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Docente\FormDocente.resx">
+      <DependentUpon>FormDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Docente\FormIngresoNota.resx">
+      <DependentUpon>FormIngresoNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Docente\ReporteAlumno.resx">
+      <DependentUpon>ReporteAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPorTipo\Docente\ReporteAlumnos.rdlc" />
     <EmbeddedResource Include="FormsPrincipales\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +336,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="academiaDataSet.xsc">
+      <DependentUpon>academiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="academiaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>academiaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="academiaDataSet.xss">
+      <DependentUpon>academiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Business.Entities.AlumnoInscripcion.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Plan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -272,6 +375,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLLs\ComponentFactory.Krypton.Toolkit.dll" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

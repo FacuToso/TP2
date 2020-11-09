@@ -32,10 +32,10 @@ namespace Data.Database
             // HARDCODEADO PARA TESTING
 
             // Santi - Lau
-            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = tp2_net; Integrated Security = true");
+            sqlConn = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = tp2_net; Integrated Security = true");
 
             // Facu
-            sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
+            //sqlConn = new SqlConnection("Data Source = localhost; Initial Catalog = academia; Integrated Security = true");
             #endregion
 
             // Por App.config

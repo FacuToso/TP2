@@ -69,6 +69,91 @@ namespace Data.Database
             return inscripcion;
         }
 
+        public List<AlumnoInscripcion> GetInscripcionesDocente(Usuario usuario)
+        {
+            List<AlumnoInscripcion> Inscripciones = new List<AlumnoInscripcion>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdDocenteInscripcion = new SqlCommand("select * from docentes_cursos dc inner join " +
+                "alumnos_inscripciones ai on ai.id_curso=dc.id_curso where dc.id_docente=@idDocente", sqlConn);
+                cmdDocenteInscripcion.Parameters.Add("@idDocente", SqlDbType.Int).Value = usuario.Persona.ID;
+                SqlDataReader drInscripciones = cmdDocenteInscripcion.ExecuteReader();
+                while (drInscripciones.Read())
+                {
+                    AlumnoInscripcion AlIns = new AlumnoInscripcion();
+                    AlIns.Alumno = new PersonasAdapter().GetOne((int)drInscripciones["id_alumno"]);
+                    AlIns.ID = (int)drInscripciones["id_inscripcion"];
+                    //Objeto Curso
+                    AlIns.Curso = new CursoAdapter().GetOne((int)drInscripciones["id_curso"]);
+                    AlIns.Condicion = (string)drInscripciones["condicion"];
+                    //Por si las notas no fueron cargadas
+                    if (String.IsNullOrEmpty(drInscripciones["nota"].ToString()))
+                    {
+                        AlIns.Nota = 0;
+                    }
+                    else
+                    {
+                        AlIns.Nota = (int)drInscripciones["nota"];
+                    }
+                    Inscripciones.Add(AlIns);
+                }
+                drInscripciones.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Inscripciones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return Inscripciones;
+        }
+
+        public List<AlumnoInscripcion> GetInscripcionesAlumno(Usuario usuario)
+        {
+            List<AlumnoInscripcion> Inscripciones = new List<AlumnoInscripcion>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdAlumnoInscripcion = new SqlCommand("select * from alumnos_inscripciones where id_alumno=@idAlumno", sqlConn);
+                cmdAlumnoInscripcion.Parameters.Add("@idAlumno", SqlDbType.Int).Value = usuario.Persona.ID;
+                SqlDataReader drInscripciones = cmdAlumnoInscripcion.ExecuteReader();
+                while (drInscripciones.Read())
+                {
+                    AlumnoInscripcion AlIns = new AlumnoInscripcion();
+                    AlIns.Alumno = new PersonasAdapter().GetOne((int)drInscripciones["id_alumno"]);
+                    AlIns.ID = (int)drInscripciones["id_inscripcion"];
+                    //Objeto Curso
+                    AlIns.Curso = new CursoAdapter().GetOne((int)drInscripciones["id_curso"]);
+                    AlIns.Condicion = (string)drInscripciones["condicion"];
+                    //Por si las notas no fueron cargadas
+                    if (String.IsNullOrEmpty(drInscripciones["nota"].ToString()))
+                    {
+                        AlIns.Nota = 0;
+                    }
+                    else
+                    {
+                        AlIns.Nota = (int)drInscripciones["nota"];
+                    }
+                    Inscripciones.Add(AlIns);
+                }
+                drInscripciones.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de Inscripciones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return Inscripciones;
+        }
+
 
         //public int GetOneByDesc(string descripcion)
 
