@@ -16,15 +16,11 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Login login = new Login();
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new Menu(login.UsuarioActual));
-            }
-            else
-            {
-                Application.Exit();
-            }
+            //Application.Run(new Planes());
+            //Application.Run(new Especialidades());
+            //Application.Run(new Usuarios());
+            Application.Run(new Materias());
+            //Application.Run(new UsuarioDesktop());
 
         }
     }

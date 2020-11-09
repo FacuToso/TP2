@@ -6,92 +6,39 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-   public class DocenteCurso : BusinessEntity
+    class DocenteCurso : BusinessEntity
     {
-        #region Atributos
-        private TiposCargos _Cargo;
-        private Curso _Curso;
-        private Persona _Docente;
-        #endregion
 
-        #region Constructores
-        public DocenteCurso()
+        public enum TiposCargos
         {
-            Curso = new Curso();
-            Docente = new Persona();
+            Cargo1,
+            Cargo2,
+            Cargo3,
+            Cargo4
         }
-        #endregion
 
-
-        #region Propiedades
-        // DocenteCurso
+        private TiposCargos _Cargo;
         public TiposCargos Cargo
         {
             get { return _Cargo; }
             set { _Cargo = value; }
         }
 
-        // Curso
-        public Curso Curso
-        {
-            get { return _Curso; }
-            set { _Curso = value; }
-        }
-
-        public string DescComisionCurso
-        {
-            get { return Curso.DescComision; }
-        }
-        
-        public string DescMateriaCurso
-        {
-            get { return Curso.DescMateria; }
-        }
+        private int _IDCurso;
         public int IDCurso
         {
-            get { return Curso.ID; }
+            get { return _IDCurso; }
+            set { _IDCurso = value; }
         }
 
-
-        // Si lo usamos hay que ponerlo no tengo idea de como lo hacemos
-        // Concatena la materia y la comision para mostrar por el DropDown
-        /* 
-           public string MateriaComisionCurso
-           {
-               get { return Curso.DescMateria + "-" + Curso.DescComision;}
-           }
-        */
-
-        // Docente
-
-        public Persona Docente
-        {
-            get { return _Docente; }
-            set { _Docente = value; }
-        }
-
+        private int _IDDocente;
         public int IDDocente
         {
-            get { return Docente.ID; }
+            get { return _IDDocente; }
+            set { _IDDocente = value; }
         }
 
-        // Si lo usamos hay que ponerlo
-        // Concatena el nombre y la Apellido para mostrar por el DropDown
-        /*
-        public string NombreApellDocente
-        {
-            get { return Docente.Apellido + ", " + Docente.Nombre; }
-        }
-        */
 
-        #endregion
-
-        public enum TiposCargos
-        {
-            Profesor,
-            JefeDeCatedra,
-            Auxiliar
-        }
 
     }
 }

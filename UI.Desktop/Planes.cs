@@ -14,28 +14,10 @@ namespace UI.Desktop
 {
     public partial class Planes : Form
     {
-        #region Constructores
         public Planes()
         {
             InitializeComponent();
         }
-        public Planes(Usuario usuario) : this()
-        {
-            UsuarioActual = usuario;
-        }
-
-        #endregion
-
-        #region Propiedades
-
-        private Usuario _usuarioActual;
-        public Usuario UsuarioActual
-        {
-            get { return _usuarioActual; }
-            set { _usuarioActual = value; }
-        }
-
-        #endregion
 
         public void Listar()
         {
@@ -83,35 +65,7 @@ namespace UI.Desktop
 
         private void Planes_Load(object sender, EventArgs e)
         {
-            try
-            {
-                UsuarioLogic usuarioLogic = new UsuarioLogic();
-                ModuloUsuario moduloUsuario = usuarioLogic.GetModuloUsuario("Planes", UsuarioActual.ID);
-                if (moduloUsuario.IDUsuario != 0)
-                {
-                    tsbEditar.Enabled = moduloUsuario.PermiteModificacion;
-                    tsdEliminar.Enabled = moduloUsuario.PermiteBaja;
-                    tsbNuevo.Enabled = moduloUsuario.PermiteAlta;
-                    dgvPlanes.Enabled = moduloUsuario.PermiteConsulta;
-                    btnActualizar.Enabled = moduloUsuario.PermiteConsulta;
-                    if (moduloUsuario.PermiteConsulta)
-                    {
-                        Listar();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Tu Usuario no tiene los permisos necesarios", "Academia");
-                    Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada =
-                    new Exception("Erro al recuperar Modulo", ex);
-
-                throw ExcepcionManejada;
-            }
+            Listar();
         }
     }
 }

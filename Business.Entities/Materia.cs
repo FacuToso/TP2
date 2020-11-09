@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,56 +8,36 @@ namespace Business.Entities
 {
     public class Materia : BusinessEntity
     {
-        #region Atributos
-        private string _Descripcion;
-        private int _HSSemanales;
-        private int _HSTotales;
-        private Plan _Plan;
-        #endregion
-
-        #region Constructores
-        public Materia()
-        {
-            Plan = new Plan();
-        }
-        #endregion
-
         #region Propiedades
 
-        // Materia
+        private string _Descripcion;
         public string Descripcion
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
 
+        private int _HSSemanales;
         public int HSSemanales
         {
             get { return _HSSemanales; }
             set { _HSSemanales = value; }
         }
 
+        private int _HSTotales;
         public int HSTotales
         {
             get { return _HSTotales; }
             set { _HSTotales = value; }
         }
-        // Plan
 
-        public Plan Plan
-        {
-            get { return _Plan; }
-            set { _Plan = value; }
-        }
+        private int _IDPlan;
         public int IDPlan
         {
-            get { return Plan.ID; }
+            get { return _IDPlan; }
+            set { _IDPlan = value; }
         }
 
-        public string DescPlan
-        {
-            get { return Plan.Descripcion; }
-        }
         #endregion
     }
 }

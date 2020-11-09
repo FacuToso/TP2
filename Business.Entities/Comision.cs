@@ -9,54 +9,30 @@ namespace Business.Entities
 {
     public class Comision : BusinessEntity
     {
-        #region Atributos
+        #region Propiedades
 
         private int _AnioEspecialidad;
-        private string _Descripcion;
-        private Plan _Plan;
 
-        #endregion
-
-        #region Constructores
-        public Comision()
-        {
-            Plan = new Plan();
-        }
-        #endregion
-
-        // Comision
-        #region Propiedades
         public int AnioEspecialidad
         {
             get { return _AnioEspecialidad;  }
             set { _AnioEspecialidad = value; }
         }
 
+        private string _Descripcion;
         public string Descripcion
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
 
-        // Plan
-        #region Plan
-        public Plan Plan
-        {
-            get { return _Plan; }
-            set { _Plan = value; }
-        }
-
+        private int _IDPlan;
         public int IDPlan
-        {
-            get { return Plan.ID; }
-        }
 
-        public string DescPlan
         {
-            get { return Plan.Descripcion; }
+            get { return _IDPlan; }
+            set { _IDPlan = value; }
         }
-        #endregion
-
         #endregion
     }
 }

@@ -30,10 +30,7 @@ namespace Data.Database
                     com.ID = (int)drComisiones["id_comision"];
                     com.Descripcion = (string)drComisiones["desc_comision"];
                     com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
-                    com.Plan = new PlanAdapter().GetOne((int)drComisiones["id_plan"]);
-
-                    //Correjido
-                    //com.IDPlan = (int)drComisiones["id_plan"];
+                    com.IDPlan = (int)drComisiones["id_plan"];
 
                     comisiones.Add(com);
                 }
@@ -97,10 +94,7 @@ namespace Data.Database
                     com.ID = (int)drComisiones["id_comision"];
                     com.Descripcion = (string)drComisiones["desc_comision"];
                     com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
-                    com.Plan = new PlanAdapter().GetOne((int)drComisiones["id_plan"]);
-
-                    //correjido
-                    //com.IDPlan = (int)drComisiones["id_plan"];
+                    com.IDPlan = (int)drComisiones["id_plan"];
                 }
                 drComisiones.Close();
             }
@@ -183,9 +177,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.Descripcion;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
-                //comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //Asi se obtiene el id desde la base de datos
-                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {

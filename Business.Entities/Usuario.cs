@@ -8,70 +8,57 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
-        #region Atributos 
-        private string _NombreUsuario;
-        private string _Clave;
-        private bool _Habilitado;
-        private Persona _Persona;
-        #endregion
-
-        #region Constructores
+        /*public static int LastID = 4;
         public Usuario()
         {
-            Persona = new Persona();
-        }
-        #endregion
+            ID = LastID;
+            LastID = (LastID + 1);
+        }*/
 
         #region Propiedades
 
+        private string _NombreUsuario;
         public string NombreUsuario
         {
             get { return _NombreUsuario; }
             set { _NombreUsuario = value; }
         }
 
+        private string _Clave;
         public string Clave
         {
             get { return _Clave; }
             set { _Clave = value; }
         }
 
+        private string _Nombre;
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
+
+        private string _Apellido;
+        public string Apellido
+        {
+            get { return _Apellido; }
+            set { _Apellido = value; }
+        }
+
+        private string _Email;
+        public string Email
+        {
+            get { return _Email; }
+            set { _Email = value; }
+        }
+
+        private bool _Habilitado;
         public bool Habilitado
         {
             get { return _Habilitado; }
             set { _Habilitado = value; }
         }
 
-        // Persona
-        public Persona Persona
-        {
-            get { return _Persona; }
-            set { _Persona = value; }
-        }
-
-        public string Nombre
-        {
-            get { return Persona.Nombre; }
-            set { Persona.Nombre = value; }
-        }
-
-        public string Apellido
-        {
-            get { return Persona.Apellido; }
-            set { Persona.Apellido = value; }
-        }
-
-        public string Email
-        {
-            get { return Persona.Email; }
-            set { Persona.Email = value; }
-        }
-
-        public int Legajo
-        {
-            get { return Persona.Legajo; }
-            set { Persona.Legajo = value; }
-        }
 
         #endregion
 

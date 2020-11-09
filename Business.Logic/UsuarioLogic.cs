@@ -38,11 +38,6 @@ namespace Business.Logic
             return UsuarioData.GetOne(ID);
         }
 
-        public Business.Entities.Usuario GetOneByNombreUsuario(string nombreUsuario)
-        {
-            return UsuarioData.GetOneByNombreUsuario(nombreUsuario);
-        }
-
         public void Delete(int ID)
         {
             UsuarioData.Delete(ID);
@@ -53,9 +48,6 @@ namespace Business.Logic
             UsuarioData.Save(usuario);
         }
 
-        public ModuloUsuario GetModuloUsuario(string descripcion, int ID)
-        {
-            return UsuarioData.GetModuloUsuario(descripcion, ID);
-        }
+
     }
 }

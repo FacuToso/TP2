@@ -2,12 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
     <asp:Panel ID="gridPanel" runat="server">
-    <asp:GridView ID="gridView" runat="server"
-        SelectRowStyle-BackColor="Black" DataKeyNames="ID"
+    <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="true"
+        SelectRowStyle-BackColor="Black"
         SelectRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
-        <Columns>
-            <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
-        </Columns>
         <FooterStyle BackColor="White" ForeColor="#000066" />
         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
